@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Face — Clínica Integrada de Saúde</title>
+<meta name="description" content="Le Face: odontologia e psicologia com atendimento humanizado, em um só lugar. Cuidado por inteiro, do sorriso à mente.">
+
+<!--
+  =====================================================================
+  GUIA DE IMAGENS — LE FACE
+  ---------------------------------------------------------------------
+  Todas as fotos são carregadas da pasta "imagens/" (ao lado deste arquivo).
+  Basta salvar os arquivos com OS MESMOS NOMES abaixo: a foto aparece
+  automaticamente por cima do placeholder listrado. Se o arquivo não existir,
+  o placeholder continua visível mostrando o nome esperado.
+
+  LOGO / MARCA
+    imagens/logo.png ............ logo da clínica (nav + rodapé), fundo transparente
+    imagens/logo-face.png ....... só o rosto + moldura dourada (usado no título do hero)
+                                   (se a logo carregar, o texto "Le Face" ao lado é ocultado automaticamente)
+    imagens/favicon.png ......... ícone da aba do navegador (64x64 ou 128x128)
+
+  HERO (título principal)
+
+  SOBRE
+    imagens/sobre/guilherme-sudati.jpg ... Dr. Guilherme Sudati, fundador (vertical, ~ 800x1340)
+
+  EQUIPE (retratos verticais 4:5, ~ 800x1000, fundo neutro de preferência)
+    imagens/equipe/guilherme.jpg .. Dr. Guilherme Sudati (dentista)
+    imagens/equipe/isabela.jpg .... Dra. Isabela Cristina Signori (dentista)
+    imagens/equipe/lais.jpg ....... Laís Caetano Sudati (psicóloga)
+    imagens/equipe/nathalia.jpg ... Dra. Nathalia Rampanelli (dentista)
+    → Para adicionar mais profissionais, duplique um bloco <article class="member"> na seção #equipe.
+
+  NOSSO ESPAÇO (galeria na moldura escura, verticais 4:5)
+    imagens/espaco/01.jpg … 09.jpg
+
+  Procure no código por "📷 FOTO" e "🖼️ LOGO" para achar cada ponto.
+  =====================================================================
+-->
+
+<!-- 🖼️ LOGO: favicon -->
+<link rel="icon" href="imagens/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Phosphor Icons (regular) — mesmo set de ícones do design system -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<style>
+/* =====================================================================
+   TOKENS — extraídos do design system (Hanzo)
+   ===================================================================== */
+:root{
+  /* superfícies */
+  --field:#d9d9d9;          /* fundo da página */
+  --white:#ffffff;          /* superfície elevada */
+  --glass:#ffffff80;        /* vidro branco */
+  --ring-dark:#ffffff4d;    /* anel sobre escuro */
+  --frame:#2b2b2b;          /* moldura escura de mídia */
+  --ink:#000000;            /* botões / rodapé */
+  /* texto */
+  --text:#000;
+  --muted:#00000080;
+  --inverse:#fff;
+  /* marca */
+  --accent:#ff3700;
+  --status:#0cb300;
+  /* bordas */
+  --divider:#00000040;
+  --hair:#0000001a;
+  /* sombras */
+  --ring:0 0 0 8px rgba(255,255,255,.25);
+  --drop:12px 16px 16px rgba(0,0,0,.1);
+  --btn-shadow:
+    rgba(0,0,0,.18) .57px .57px 1.76px -.42px,
+    rgba(0,0,0,.18) 1.45px 1.45px 4.5px -.83px,
+    rgba(0,0,0,.18) 2.9px 2.9px 9px -1.25px,
+    rgba(0,0,0,.18) 5.5px 5.5px 17px -1.67px,
+    rgba(0,0,0,.18) 10.9px 10.9px 34px -2.08px,
+    rgba(0,0,0,.18) 24px 24px 74.7px -2.5px;
+  /* tipografia */
+  --sans:"Inter","Inter Display",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  /* movimento */
+  --ease:cubic-bezier(.44,0,.56,1);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  /* layout */
+  --gutter:120px;
+  --maxw:1200px;
+}
+@media (max-width:1439.98px){ :root{ --gutter:48px; } }
+@media (max-width:809.98px){ :root{ --gutter:20px; } }
+
+/* =====================================================================
+   BASE
+   ===================================================================== */
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--field); color:var(--text);
+  font-family:var(--sans); font-optical-sizing:auto; font-size:16px; line-height:1.5;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+::selection{ background:var(--accent); color:#000; }
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; padding:0; cursor:pointer; }
+h1,h2,h3,h4,p{ margin:0; }
+.wrap{ width:min(100% - var(--gutter)*2, var(--maxw)); margin-inline:auto; position:relative; }
+.sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+/* =====================================================================
+   FUNDO DA PÁGINA — gradiente 225°, raios de luz e granulado
+   ===================================================================== */
+.page-field{
+  position:absolute; top:0; left:0; right:0; height:200vh; z-index:0; pointer-events:none; overflow:hidden;
+  background:linear-gradient(225deg,#fff 0%,#dbdbdb 100%);
+  -webkit-mask:radial-gradient(125% 100% at 0 0,#000 0%,#00000039 88%,#0000 100%);
+          mask:radial-gradient(125% 100% at 0 0,#000 0%,#00000039 88%,#0000 100%);
+}
+.rays{ position:absolute; inset:-20% -10% auto; height:140vh; pointer-events:none; }
+.rays i{
+  position:absolute; top:0; height:100%; transform:skewX(45deg); transform-origin:top;
+  background:linear-gradient(180deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,0) 75%);
+  filter:blur(18px); opacity:.55; animation:ray 9s var(--ease) infinite alternate;
+}
+.rays i:nth-child(1){ left:8%;  width:90px;  animation-delay:-2s; }
+.rays i:nth-child(2){ left:22%; width:180px; opacity:.4; animation-delay:-5s; }
+.rays i:nth-child(3){ left:41%; width:60px;  animation-delay:-1s; }
+.rays i:nth-child(4){ left:55%; width:220px; opacity:.35; animation-delay:-7s; }
+.rays i:nth-child(5){ left:76%; width:110px; animation-delay:-3s; }
+@keyframes ray{ from{ opacity:.25; translate:-30px 0; } to{ opacity:.7; translate:30px 0; } }
+
+.noise{
+  position:fixed; inset:0; z-index:100; pointer-events:none; opacity:.05; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* faixa de luz diagonal 45° (intro / explore) */
+.light-sweep{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:linear-gradient(45deg,#fff 0%,#fff 10%,#fff 20.8%,#ffffff80 28.9%,#d9d9d9 36.8%,#d9d9d9 46.6%,#ffffff80 55%,#d9d9d900 70%);
+  opacity:.65;
+  -webkit-mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
+          mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);
+}
+main, header, footer{ position:relative; z-index:1; }
+
+/* =====================================================================
+   TIPOGRAFIA
+   ===================================================================== */
+.display{ font-weight:400; font-size:clamp(44px,6.6vw,104px); line-height:1.12; letter-spacing:-.06em; }
+.numeral{ font-weight:300; font-size:72px; line-height:1.1; letter-spacing:-.06em; }
+.h2{ font-weight:400; font-size:48px; line-height:1.2; letter-spacing:-.045em; text-wrap:balance; }
+.lead{ font-weight:400; font-size:44px; line-height:1.25; letter-spacing:-.045em; }
+.h3{ font-weight:400; font-size:24px; line-height:1.35; letter-spacing:-.03em; }
+.title{ font-weight:400; font-size:20px; line-height:1.4; letter-spacing:-.02em; }
+.body{ font-size:16px; line-height:1.6; color:var(--muted); letter-spacing:-.01em; }
+.meta{ font-size:12px; line-height:1.4; color:var(--muted); letter-spacing:0; }
+.tone{ color:var(--muted); }
+.link{ color:var(--accent); transition:opacity .2s; }
+.link:hover{ opacity:.7; }
+@media (max-width:1439.98px){
+  .numeral{ font-size:56px; } .h2{ font-size:40px; } .lead{ font-size:36px; } .h3{ font-size:20px; } .title{ font-size:18px; }
+}
+@media (max-width:809.98px){
+  .numeral{ font-size:44px; } .h2{ font-size:30px; } .lead{ font-size:27px; } .h3{ font-size:18px; }
+}
+
+/* eyebrow: serif itálico entre filetes que esmaecem */
+.eyebrow{ display:flex; align-items:center; justify-content:center; gap:20px; font:italic 400 24px/1 var(--serif); color:var(--muted); letter-spacing:0; }
+.eyebrow::before,.eyebrow::after{ content:""; width:64px; height:1px; background:linear-gradient(90deg,transparent,var(--divider)); }
+.eyebrow::after{ transform:scaleX(-1); }
+.eyebrow.on-dark{ color:rgba(255,255,255,.6); }
+.eyebrow.on-dark::before,.eyebrow.on-dark::after{ background:linear-gradient(90deg,transparent,rgba(255,255,255,.4)); }
+.eyebrow.left{ justify-content:flex-start; }
+.eyebrow.left::before{ display:none; }
+
+.sec-head{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:20px; max-width:760px; margin:0 auto 64px; }
+.sec-head .body{ max-width:520px; }
+
+/* =====================================================================
+   SUPERFÍCIES
+   ===================================================================== */
+.pill{
+  display:inline-flex; align-items:center; gap:8px; padding:8px 16px; border-radius:999px;
+  background:var(--white); border:1px solid #fff; box-shadow:var(--ring),var(--drop);
+}
+.card{ background:var(--white); border-radius:16px; box-shadow:var(--ring),var(--drop); }
+.glass{ background:var(--glass); border-radius:16px; box-shadow:0 0 0 8px #ffffff40,var(--drop);
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); }
+.dark-frame{ background:var(--frame); border-radius:24px; box-shadow:0 0 0 8px #ffffff40; position:relative; overflow:hidden; }
+
+/* status (agenda aberta) */
+.status{ font-size:15px; color:var(--muted); letter-spacing:-.01em; }
+.status b{ color:var(--text); font-weight:400; }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--status); position:relative; flex:none; }
+.dot::after{ content:""; position:absolute; inset:0; border-radius:50%; background:var(--status); animation:ping 1.8s var(--ease-out) infinite; }
+@keyframes ping{ from{ transform:scale(1); opacity:.6; } to{ transform:scale(3); opacity:0; } }
+
+/* =====================================================================
+   PLACEHOLDER DE FOTO
+   Coloque o arquivo no caminho indicado no src: a imagem cobre o placeholder.
+   ===================================================================== */
+.photo{
+  position:relative; overflow:hidden; isolation:isolate;
+  background:repeating-linear-gradient(135deg,#cdcdcd 0 12px,#d5d5d5 12px 24px);
+}
+.photo::before{
+  content:""; position:absolute; left:50%; top:50%; width:34px; height:34px; translate:-50% -60%; opacity:.4;
+  background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='none' stroke='%23000' stroke-width='14' stroke-linecap='round' stroke-linejoin='round' d='M208 208H48a16 16 0 0 1-16-16V80a16 16 0 0 1 16-16h32l16-24h64l16 24h32a16 16 0 0 1 16 16v112a16 16 0 0 1-16 16Z'/%3E%3Ccircle cx='128' cy='132' r='36' fill='none' stroke='%23000' stroke-width='14'/%3E%3C/svg%3E");
+}
+.photo::after{
+  content:attr(data-label); position:absolute; left:10px; right:10px; bottom:10px; text-align:center;
+  font:500 10.5px/1.3 var(--mono); color:rgba(0,0,0,.55); letter-spacing:.02em; overflow-wrap:anywhere;
+}
+.photo.sm::before{ width:14px; height:14px; translate:-50% -50%; }
+.photo.sm::after{ display:none; }
+.photo.dark{ background:repeating-linear-gradient(135deg,#333 0 12px,#3a3a3a 12px 24px); }
+.photo.dark::before{ filter:invert(1); }
+.photo.dark::after{ color:rgba(255,255,255,.5); }
+.photo > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:1; }
+
+/* =====================================================================
+   BOTÕES
+   ===================================================================== */
+.btn{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:12px 20px 12px 24px; border-radius:154px; font-size:16px; line-height:1.5; letter-spacing:-.01em;
+  white-space:nowrap; cursor:pointer; user-select:none; overflow:hidden;
+  transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background-color .3s;
+  will-change:transform;
+}
+.btn:active{ transform:scale(.97); }
+.btn-primary{ background:#000; color:#fff; box-shadow:var(--btn-shadow), inset 0 -16px 48px #000; }
+.btn-primary::before{ /* brilho sutil no topo */
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 55%); opacity:.8;
+}
+.btn-primary:hover{ transform:translateY(-2px); }
+.btn-secondary{ background:#fff; color:#000; border:1px solid #fff; box-shadow:var(--ring),var(--drop); padding:12px 24px; }
+.btn-secondary:hover{ transform:translateY(-2px); box-shadow:0 0 0 8px rgba(255,255,255,.45),14px 20px 24px rgba(0,0,0,.12); }
+.btn-sm{ padding:8px 14px 8px 18px; font-size:15px; }
+.btn-block{ width:100%; }
+/* seta que troca no hover */
+.btn .ico{ position:relative; width:20px; height:20px; flex:none; overflow:hidden; font-size:20px; color:rgba(255,255,255,.5); transition:color .3s; }
+.btn-secondary .ico{ color:rgba(0,0,0,.5); }
+.btn .ico i{ position:absolute; inset:0; display:grid; place-items:center; transition:transform .5s var(--ease-out); }
+.btn .ico i:last-child{ transform:translate(-120%,120%); }
+.btn:hover .ico i:first-child{ transform:translate(120%,-120%); }
+.btn:hover .ico i:last-child{ transform:none; }
+.btn:hover .ico{ color:currentColor; }
+/* anel em volta do botão (hero) */
+.ring{ display:inline-flex; padding:8px; border-radius:999px; background:rgba(255,255,255,.25); }
+.ring.on-ink{ background:var(--ring-dark); }
+
+/* =====================================================================
+   NAVEGAÇÃO
+   ===================================================================== */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:50; padding:20px var(--gutter);
+  display:flex; align-items:center; justify-content:space-between; gap:16px; pointer-events:none;
+  opacity:0; transform:translateY(-48px);
+}
+body.loaded .nav{ animation:navIn 1s var(--ease) .9s both; }
+@keyframes navIn{ from{ opacity:0; transform:translateY(-48px); } to{ opacity:1; transform:none; } }
+.nav > *{ pointer-events:auto; }
+.wordmark{ height:48px; padding:0 20px 0 6px; gap:10px; font-size:20px; letter-spacing:-.05em; }
+.logo-slot{ position:relative; height:36px; display:flex; align-items:center; }
+.logo-slot img{ height:38px; width:auto; max-width:180px; object-fit:contain; display:none; }
+.logo-mark{ width:36px; height:36px; border-radius:50%; background:#000; color:#fff; display:grid; place-items:center;
+  font:italic 400 19px/1 var(--serif); letter-spacing:0; }
+.has-logo .logo-slot img{ display:block; }
+.has-logo .logo-mark, .has-logo .wordmark-text{ display:none; }
+.has-logo.wordmark{ padding:0 18px 0 14px; }
+
+.nav-links{ display:flex; gap:8px; padding:6px; border-radius:999px; background:rgba(255,255,255,.55);
+  -webkit-backdrop-filter:blur(16px); backdrop-filter:blur(16px); box-shadow:0 0 0 1px rgba(255,255,255,.6),var(--drop); }
+.nav-links a{ padding:8px 16px; border-radius:999px; font-size:15px; letter-spacing:-.01em; transition:background-color .25s, color .25s; }
+.nav-links a:hover{ background:rgba(255,255,255,.9); }
+.nav-links a.is-active{ background:#000; color:#fff; }
+.nav-right{ display:flex; align-items:center; gap:12px; }
+.menu-btn{ width:48px; height:48px; border-radius:50%; background:#fff; box-shadow:var(--ring),var(--drop); display:grid; place-items:center; position:relative; }
+.menu-btn span{ position:absolute; width:18px; height:1.5px; background:#000; border-radius:2px; transition:transform .45s var(--ease-out); }
+.menu-btn span:first-child{ transform:translateY(-3.5px); }
+.menu-btn span:last-child{ transform:translateY(3.5px); }
+.menu-open .menu-btn span:first-child{ transform:rotate(45deg); }
+.menu-open .menu-btn span:last-child{ transform:rotate(-45deg); }
+.menu-panel{
+  position:absolute; top:84px; right:var(--gutter); width:320px; max-width:calc(100vw - 40px); padding:28px;
+  display:flex; flex-direction:column; gap:22px;
+  opacity:0; visibility:hidden; transform:translateY(-12px) scale(.97); transform-origin:top right;
+  transition:opacity .35s var(--ease-out), transform .45s var(--ease-out), visibility 0s .45s;
+}
+.menu-open .menu-panel{ opacity:1; visibility:visible; transform:none; transition:opacity .35s var(--ease-out), transform .45s var(--ease-out); }
+.menu-panel nav{ display:flex; flex-direction:column; gap:2px; }
+.menu-panel nav a{ font-size:24px; letter-spacing:-.04em; padding:4px 0; display:flex; justify-content:space-between; align-items:center; transition:padding .3s var(--ease-out), color .2s; }
+.menu-panel nav a i{ font-size:18px; opacity:0; transform:translateX(-6px); transition:.3s var(--ease-out); }
+.menu-panel nav a:hover{ padding-left:6px; }
+.menu-panel nav a:hover i{ opacity:.5; transform:none; }
+.menu-panel .get{ color:var(--accent); font-size:16px; display:flex; align-items:center; gap:6px; }
+.socials{ display:flex; gap:8px; }
+.socials a{ width:40px; height:40px; border-radius:50%; display:grid; place-items:center; font-size:19px; color:var(--muted);
+  border:1px solid var(--hair); transition:background-color .25s, color .25s, transform .3s var(--ease-out); }
+.socials a:hover{ background:#000; color:#fff; transform:translateY(-2px); }
+@media (max-width:1099.98px){ .nav-links{ display:none; } }
+@media (max-width:809.98px){ .nav{ padding:14px var(--gutter); } .nav-right .btn{ display:none; } .menu-panel{ top:74px; } }
+
+/* =====================================================================
+   ANIMAÇÕES DE ENTRADA
+   ===================================================================== */
+/* título dividido por letra: blur → nítido */
+.word{ display:inline-block; white-space:nowrap; }
+.ch{ display:inline-block; opacity:0; filter:blur(10px); transform:translateY(.3em); }
+body.loaded .ch{ animation:chIn 1s var(--ease-out) calc(.2s + var(--i) * 26ms) both; }
+@keyframes chIn{ to{ opacity:1; filter:blur(0); transform:none; } }
+/* aparições no carregamento */
+[data-appear]{ opacity:0; transform:translateY(24px); filter:blur(6px); }
+body.loaded [data-appear]{ animation:appear 1s var(--ease-out) var(--d,1s) both; }
+@keyframes appear{ to{ opacity:1; transform:none; filter:blur(0); } }
+/* revelação no scroll (animation com fill "backwards": não trava os transforms de hover) */
+[data-reveal]{ opacity:0; }
+[data-reveal].in{ opacity:1; animation:revealUp 1.1s var(--ease-out) var(--d,0s) backwards; }
+[data-reveal="scale"].in{ animation-name:revealScale; }
+[data-reveal="tilt"].in{ animation-name:revealTilt; animation-duration:1.3s; }
+@keyframes revealUp{ from{ opacity:0; translate:0 40px; filter:blur(8px); } }
+@keyframes revealScale{ from{ opacity:0; scale:.92; translate:0 30px; filter:blur(8px); } }
+@keyframes revealTilt{ from{ opacity:0; translate:0 70px; transform:rotate(var(--r-from,-6deg)); filter:blur(8px); } }
+/* traços desenhados à mão */
+.draw path{ stroke-dasharray:1; stroke-dashoffset:1; }
+.in .draw path, .draw.in path{ animation:drawIn 1.4s var(--ease-out) var(--dd,.4s) forwards; }
+@keyframes drawIn{ to{ stroke-dashoffset:0; } }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero{ min-height:100svh; display:flex; align-items:center; padding:150px 0 120px; position:relative; }
+.hero-inner{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:36px; }
+.hero h1 .line{ display:block; }
+.hero h1 .tone{ white-space:nowrap; }
+.hero-sub{ max-width:540px; font-size:18px; }
+.hero-ctas{ display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center; }
+
+/* pílula de mídia inclinada com slideshow */
+.media-pill{ display:inline-block; vertical-align:-.04em; position:relative; }
+.slideshow{
+  width:1.75em; height:.78em; border-radius:999px; overflow:hidden; rotate:-6deg; margin:0 .08em;
+  box-shadow:0 0 0 .07em rgba(255,255,255,.55), 10px 14px 24px rgba(0,0,0,.14);
+  transform:scale(0);
+}
+body.loaded .slideshow{ animation:pillIn 1.1s var(--spring) .55s both; }
+@keyframes pillIn{ from{ transform:scale(0) rotate(-20deg); } to{ transform:none; } }
+.slideshow .photo{ position:absolute; inset:0; opacity:0; animation:fade 12s infinite; }
+.slideshow .photo::after{ font-size:9px; bottom:6px; }
+.slideshow .photo::before{ width:20px; height:20px; }
+.slideshow .photo:nth-child(1){ animation-delay:0s; }
+.slideshow .photo:nth-child(2){ animation-delay:3s; }
+.slideshow .photo:nth-child(3){ animation-delay:6s; }
+.slideshow .photo:nth-child(4){ animation-delay:9s; }
+@keyframes fade{ 0%{opacity:0; transform:scale(1.12);} 6%{opacity:1;} 25%{opacity:1;} 31%{opacity:0;} 100%{opacity:0; transform:scale(1);} }
+
+/* losango da marca (rosto + moldura dourada) no título */
+.gem{ width:.78em; height:.94em; margin:0 .1em; vertical-align:-.13em; rotate:-6deg; transform:scale(0);
+  filter:drop-shadow(0 0 .06em rgba(255,255,255,.9)) drop-shadow(8px 14px 16px rgba(0,0,0,.16)); }
+body.loaded .gem{ animation:pillIn 1.1s var(--spring) .55s both; }
+.gem-in{ position:absolute; inset:0; display:block; animation:gemFloat 6s ease-in-out 1.7s infinite; }
+.gem-in img{ width:100%; height:100%; object-fit:contain; display:block; }
+.gem-shine{ position:absolute; inset:0; clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%); pointer-events:none;
+  background:linear-gradient(115deg, transparent 38%, rgba(255,255,255,.75) 50%, transparent 62%) no-repeat;
+  background-size:300% 100%; background-position:150% 0; mix-blend-mode:soft-light; animation:gemShine 5s ease-in-out 2s infinite; }
+@keyframes gemFloat{ 0%,100%{ transform:translateY(0) rotate(0deg); } 50%{ transform:translateY(-.04em) rotate(3deg); } }
+@keyframes gemShine{ 0%{ background-position:150% 0; } 35%,100%{ background-position:-50% 0; } }
+
+/* pílula escura com ticker de especialidades */
+.ticker{
+  font-size:.26em; letter-spacing:-.02em; height:3em; padding:0 1.2em 0 .45em; margin:0 .25em;
+  display:inline-grid; align-items:center; vertical-align:.95em; border-radius:999px; overflow:hidden;
+  background:var(--frame); color:#fff; box-shadow:0 0 0 .3em rgba(255,255,255,.4), 10px 14px 24px rgba(0,0,0,.18);
+  rotate:3deg; transform:scale(0);
+}
+body.loaded .ticker{ animation:pillIn 1.1s var(--spring) .95s both; }
+.t-item{ grid-area:1/1; display:flex; align-items:center; gap:.55em; white-space:nowrap;
+  opacity:0; transform:translateY(110%); transition:transform .7s var(--ease-out), opacity .7s var(--ease-out); }
+.t-item.on{ opacity:1; transform:none; }
+.t-item.out{ opacity:0; transform:translateY(-110%); }
+.t-item .t-ico{ width:2.1em; height:2.1em; border-radius:50%; background:var(--accent); display:grid; place-items:center; font-size:1em; color:#000; }
+@media (max-width:809.98px){ .ticker{ font-size:.32em; } .hero h1 .line{ display:inline; } }
+
+/* avatares sobrepostos */
+.avatar-stack{ display:flex; align-items:center; gap:14px; }
+.avatars{ display:flex; }
+.avatars .photo{ width:34px; height:34px; border-radius:50%; border:2px solid #fff; margin-left:-10px; box-shadow:2px 3px 6px rgba(0,0,0,.1); }
+.avatars .photo:first-child{ margin-left:0; }
+.avatar-stack .meta{ text-align:left; }
+.avatar-stack .meta b{ display:block; font-weight:400; font-size:14px; color:#000; letter-spacing:-.01em; }
+/* link "Venha nos conhecer!" (Google Maps) */
+.visit{ padding:6px 18px 6px 6px; gap:12px; transition:transform .5s var(--ease-out), box-shadow .5s var(--ease-out); }
+.visit:hover{ transform:translateY(-3px) rotate(-1deg); box-shadow:0 0 0 8px rgba(255,255,255,.5),14px 20px 26px rgba(0,0,0,.12); }
+.v-ico{ position:relative; width:40px; height:40px; border-radius:50%; background:#ffe1d6; color:var(--accent); display:grid; place-items:center; font-size:20px; flex:none; }
+.v-ico::after{ content:""; position:absolute; inset:0; border-radius:50%; border:1.5px solid var(--accent); opacity:0; animation:ping 2.4s var(--ease-out) 2s infinite; }
+.v-ico i{ transition:transform .6s var(--spring); }
+.visit:hover .v-ico i{ transform:translateY(-3px) scale(1.08); }
+.v-txt{ display:flex; flex-direction:column; text-align:left; line-height:1.25; }
+.v-txt b{ font-weight:400; font-size:15px; color:#000; letter-spacing:-.01em; }
+.v-txt .meta{ font-size:12px; }
+.v-arrow{ position:relative; width:18px; height:18px; overflow:hidden; font-size:18px; color:var(--accent); flex:none; }
+.v-arrow i{ position:absolute; inset:0; display:grid; place-items:center; transition:transform .5s var(--ease-out); }
+.v-arrow i:last-child{ transform:translate(-120%,120%); }
+.visit:hover .v-arrow i:first-child{ transform:translate(120%,-120%); }
+.visit:hover .v-arrow i:last-child{ transform:none; }
+.stars{ color:var(--accent); font-size:12px; letter-spacing:1px; }
+
+/* chips flutuantes */
+.float-chip{
+  position:relative; z-index:2; padding:4px 20px 4px 4px; gap:10px; font-size:15px; letter-spacing:-.01em; cursor:grab;
+  rotate:var(--rot,0deg); animation:bob 6s var(--ease) infinite alternate; animation-delay:var(--bd,0s);
+  transition:translate .6s var(--ease-out);
+}
+.float-chip:active{ cursor:grabbing; }
+.float-chip .chip-ico{ width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-size:19px; background:var(--chip,#ffe1d6); }
+@keyframes bob{ from{ transform:translateY(-8px); } to{ transform:translateY(8px); } }
+.chip-wrap{ position:absolute; inset:0; pointer-events:none; }
+.chip-wrap .float-chip{ pointer-events:auto; }
+.chip-wrap > div{ opacity:0; }
+body.loaded .chip-wrap > div{ animation:appear 1s var(--ease-out) var(--d) both; }
+@media (max-width:1099.98px){ .chip-wrap{ display:none; } }
+
+/* faixa com marquee */
+.band-wrap{ position:relative; z-index:2; margin-top:-40px; padding:30px 0; overflow:hidden; }
+.band{ background:#fff; rotate:-2deg; width:110%; margin-left:-5%; box-shadow:var(--ring),var(--drop); padding:22px 0; overflow:hidden; }
+.marquee{ display:flex; width:max-content; animation:marq 60s linear infinite; }
+.marquee span{ display:flex; align-items:center; gap:36px; padding-right:36px; font-size:clamp(26px,3vw,40px); letter-spacing:-.05em; white-space:nowrap; }
+.marquee em{ font:italic 400 1.05em/1 var(--serif); letter-spacing:0; color:var(--muted); }
+.marquee .ast{ color:var(--accent); font-size:.8em; display:inline-block; animation:spin 8s linear infinite; }
+@keyframes marq{ to{ transform:translateX(-50%); } }
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* =====================================================================
+   SEÇÕES
+   ===================================================================== */
+section{ position:relative; }
+.section{ padding:120px 0; }
+@media (max-width:809.98px){ .section{ padding:96px 0; } .sec-head{ margin-bottom:44px; } }
+
+/* --- INTRO / SOBRE --- */
+.intro-grid{ display:grid; grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:72px; align-items:center; position:relative; z-index:1; }
+.reveal-words .w{ opacity:.2; transition:opacity .25s linear; }
+.intro-photo{ position:relative; }
+.intro-photo .card{ padding:8px; rotate:3deg; transition:rotate .6s var(--ease-out); }
+.intro-photo .card:hover{ rotate:0deg; }
+.intro-photo .photo{ aspect-ratio:2/3; border-radius:10px; }
+.intro-photo .photo > img{ object-position:50% 0%; }
+.intro-photo .badge{ position:absolute; left:-36px; bottom:40px; rotate:-5deg; padding:14px 18px; display:flex; gap:12px; align-items:center; border-radius:16px; }
+.badge .b-ico{ width:40px; height:40px; border-radius:50%; background:#e6f6e3; display:grid; place-items:center; font-size:22px; color:var(--status); }
+.badge b{ display:block; font-weight:400; letter-spacing:-.02em; }
+.stats{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:24px; margin-top:96px; position:relative; z-index:1; }
+.stat{ padding:28px; display:flex; flex-direction:column; gap:6px; }
+.stat .numeral sup{ font-size:.45em; vertical-align:.9em; color:var(--accent); margin-left:2px; }
+@media (max-width:1099.98px){ .intro-grid{ grid-template-columns:1fr; gap:56px; } .intro-photo{ max-width:420px; margin:0 auto; } .stats{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:809.98px){ .intro-photo .badge{ left:-8px; } .stats{ gap:16px; margin-top:64px; } .stat{ padding:20px; } }
+
+/* --- ESPECIALIDADES --- */
+.services{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; max-width:1040px; margin:0 auto; }
+.service{ padding:32px; display:flex; flex-direction:column; gap:20px; min-height:340px; position:relative; overflow:hidden;
+  transition:transform .6s var(--ease-out), box-shadow .6s var(--ease-out); }
+.service:hover{ transform:translateY(-8px) rotate(-1deg); box-shadow:0 0 0 8px rgba(255,255,255,.5),18px 28px 36px rgba(0,0,0,.12); }
+.service .s-ico{ width:56px; height:56px; border-radius:16px; display:grid; place-items:center; font-size:28px; background:var(--chip); transition:transform .6s var(--spring); }
+.service:hover .s-ico{ transform:rotate(-8deg) scale(1.08); }
+.service .s-top{ display:flex; justify-content:space-between; align-items:flex-start; }
+.service .s-num{ font:italic 400 22px/1 var(--serif); color:var(--muted); }
+.service .body{ flex:1; }
+.tags{ display:flex; flex-wrap:wrap; gap:6px; }
+.tag{ font-size:12px; padding:5px 10px; border-radius:999px; background:#f2f2f2; color:#000; letter-spacing:0; }
+.service .more{ display:flex; align-items:center; gap:6px; color:var(--accent); font-size:15px; }
+.service .more i{ transition:transform .4s var(--ease-out); }
+.service:hover .more i{ transform:translate(3px,-3px); }
+@media (max-width:1099.98px){ .services{ gap:24px; } }
+@media (max-width:809.98px){ .services{ grid-template-columns:1fr; } .service{ min-height:0; padding:26px; } }
+
+/* --- COMO FUNCIONA --- */
+.process-section{ overflow:hidden; }
+.circled{ position:relative; display:inline-block; white-space:nowrap; }
+.circled svg{ position:absolute; left:-10%; top:-18%; width:120%; height:140%; overflow:visible; pointer-events:none; }
+.steps{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; position:relative; }
+.step{ padding:28px; display:flex; flex-direction:column; gap:14px; min-height:330px; rotate:var(--r,0deg);
+  transition:rotate .6s var(--ease-out), transform .6s var(--ease-out); }
+.step:hover{ rotate:0deg; transform:translateY(-6px); }
+.step .numeral{ margin-bottom:auto; }
+.step .s-chip{ align-self:flex-start; display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:5px 10px 5px 6px; border-radius:999px; background:#f2f2f2; }
+.step .s-chip i{ width:20px; height:20px; border-radius:50%; background:var(--accent); color:#fff; display:grid; place-items:center; font-size:11px; }
+.step-arrow{ position:absolute; top:-58px; width:110px; height:60px; overflow:visible; pointer-events:none; }
+.step-arrow:nth-of-type(1){ left:calc(25% - 70px); }
+.step-arrow:nth-of-type(2){ left:calc(50% - 55px); top:auto; bottom:-62px; transform:scaleY(-1); }
+.step-arrow:nth-of-type(3){ left:calc(75% - 40px); }
+@media (max-width:1099.98px){ .steps{ grid-template-columns:repeat(2,1fr); gap:28px; } .step-arrow{ display:none; } }
+@media (max-width:809.98px){ .steps{ grid-template-columns:1fr; } .step{ min-height:0; } .step .numeral{ margin-bottom:12px; } }
+
+/* --- EQUIPE --- */
+.team{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; }
+.member{ padding:8px 8px 20px; display:flex; flex-direction:column; gap:16px; rotate:var(--r,0deg);
+  transition:rotate .6s var(--ease-out), transform .6s var(--ease-out), box-shadow .6s var(--ease-out); }
+.member:hover{ rotate:0deg; transform:translateY(-10px); box-shadow:0 0 0 8px rgba(255,255,255,.5),18px 28px 36px rgba(0,0,0,.14); }
+.member .photo{ aspect-ratio:4/5; border-radius:10px; }
+.member .photo img{ transition:transform 1s var(--ease-out); }
+.member:hover .photo img{ transform:scale(1.05); }
+.member .m-info{ padding:0 12px; display:flex; flex-direction:column; gap:4px; }
+.member .m-foot{ margin-top:auto; padding:4px 12px 0; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.member .socials a{ width:34px; height:34px; font-size:16px; }
+.reg{ font:500 11px/1 var(--mono); color:var(--muted); letter-spacing:.04em; text-transform:uppercase; }
+.member .m-ig{ align-self:flex-start; font-size:14px; color:var(--accent); letter-spacing:-.01em; word-break:break-all; transition:opacity .3s; }
+.member .m-ig:hover{ opacity:.7; text-decoration:underline; text-underline-offset:3px; }
+.team-cta{ margin-top:72px; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
+@media (max-width:1099.98px){ .team{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .team{ grid-template-columns:1fr; max-width:360px; margin:0 auto; } }
+
+/* --- NOSSO ESPAÇO (moldura escura com tickers verticais) --- */
+.gallery{ height:min(120vh,980px); cursor:none; }
+.gallery-cols{ position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; padding:0 16px; }
+.g-col{ overflow:hidden; }
+.g-track{ display:flex; flex-direction:column; gap:16px; animation:up 40s linear infinite; }
+.g-col:nth-child(2) .g-track{ animation-direction:reverse; animation-duration:46s; }
+.g-col:nth-child(3) .g-track{ animation-duration:52s; }
+.g-track .photo{ aspect-ratio:4/5; border-radius:16px; flex:none; }
+@keyframes up{ to{ transform:translateY(calc(-50% - 8px)); } }
+.gallery:hover .g-track{ animation-play-state:paused; }
+.g-shade{ position:absolute; inset:0 0 auto; height:70%; z-index:1; pointer-events:none; background:linear-gradient(180deg,var(--frame) 0%,var(--frame) 22%,#2b2b2b00 100%); }
+.g-shade.bottom{ inset:auto 0 0; height:22%; background:linear-gradient(0deg,var(--frame),#2b2b2b00); }
+.g-head{ position:absolute; z-index:2; top:72px; left:0; right:0; text-align:center; display:flex; flex-direction:column; align-items:center; gap:20px; padding:0 24px; color:#fff; }
+.g-head .body{ color:rgba(255,255,255,.6); max-width:460px; }
+.cursor-badge{
+  position:fixed; left:0; top:0; z-index:60; pointer-events:none; width:96px; height:96px; border-radius:50%;
+  background:#fff; color:#000; display:grid; place-items:center; box-shadow:var(--ring),var(--drop);
+  transform:translate(-50%,-50%) scale(0); transition:transform .35s var(--ease-out);
+}
+.cursor-badge.show{ transform:translate(-50%,-50%) scale(1); }
+.cursor-badge i{ font-size:26px; }
+.cursor-badge span{ position:absolute; inset:0; animation:spin 10s linear infinite; }
+.cursor-badge svg{ width:100%; height:100%; font:500 10.5px var(--sans); letter-spacing:.18em; text-transform:uppercase; }
+@media (max-width:809.98px){ .gallery{ height:760px; cursor:auto; } .gallery-cols{ grid-template-columns:repeat(2,1fr); gap:10px; padding:0 10px; } .g-col:nth-child(3){ display:none; } .g-track{ gap:10px; } .g-head{ top:48px; } }
+
+/* --- DEPOIMENTOS --- */
+.testi-section{ overflow:hidden; }
+.testi-row{ display:flex; width:max-content; gap:32px; padding:24px 16px; animation:marq 70s linear infinite; }
+.testi-row:hover{ animation-play-state:paused; }
+.testi{ width:400px; padding:32px; display:flex; flex-direction:column; gap:22px; rotate:var(--r,0deg); transition:rotate .5s var(--ease-out); flex:none; }
+.testi:hover{ rotate:0deg; }
+.testi .stars{ font-size:16px; }
+.testi .title{ flex:1; }
+.testi hr{ border:0; height:1px; background:var(--divider); margin:0; }
+.who{ display:flex; align-items:center; gap:12px; }
+.initials{ width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font:italic 400 20px/1 var(--serif); background:var(--chip,#f0f0f0); }
+.who b{ display:block; font-weight:400; letter-spacing:-.01em; }
+.google{ display:inline-flex; gap:10px; font-size:14px; }
+.google b{ font-weight:500; }
+@media (max-width:809.98px){ .testi{ width:300px; padding:24px; } }
+
+/* --- EXPLORE: sorriso & mente (seção interativa) --- */
+/* palco com os dois elementos */
+.exp-stage{ display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start; transition:grid-template-columns .8s var(--ease-out); }
+.exp[data-on="sorriso"] .exp-stage{ grid-template-columns:3fr 1fr; }
+.exp[data-on="mente"] .exp-stage{ grid-template-columns:1fr 3fr; }
+.exp-item{ width:100%; position:relative; padding:40px 32px 32px; display:flex; flex-direction:column; align-items:center; gap:24px; text-align:center;
+  transition:transform .6s var(--ease-out), box-shadow .6s var(--ease-out), opacity .6s var(--ease-out), filter .6s var(--ease-out), padding .6s var(--ease-out), gap .6s var(--ease-out); }
+.exp-item:hover{ transform:translateY(-6px); box-shadow:0 0 0 8px rgba(255,255,255,.5),18px 28px 36px rgba(0,0,0,.12); }
+.exp-art{ position:relative; width:min(100%,340px); aspect-ratio:1; border-radius:50%; background:var(--chip); display:grid; place-items:center;
+  box-shadow:var(--ring); transition:width .8s var(--ease-out), transform .6s var(--spring), box-shadow .6s var(--ease-out); }
+.exp-art::before{ content:""; position:absolute; inset:0; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.85),rgba(255,255,255,0) 62%); opacity:.45; transition:opacity .6s var(--ease-out); }
+.exp-item:hover .exp-art{ transform:scale(1.04); box-shadow:0 0 0 8px rgba(255,255,255,.5); }
+.exp-item:hover .exp-art::before{ opacity:1; }
+.exp-svg{ position:relative; width:84%; height:84%; overflow:visible; transition:filter .6s var(--ease-out); }
+.exp-item:hover .exp-svg{ filter:drop-shadow(0 0 14px rgba(255,255,255,.95)); }
+/* tooltip "Clique para explorar" */
+.exp-tip{ position:absolute; left:50%; top:-8px; z-index:2; padding:6px 14px 6px 10px; font-size:13px; letter-spacing:-.01em; white-space:nowrap;
+  opacity:0; translate:-50% 10px; pointer-events:none; transition:opacity .3s, translate .45s var(--ease-out); }
+.exp-tip i{ color:var(--accent); font-size:16px; }
+.exp-item:hover .exp-tip,.exp-item:focus-visible .exp-tip{ opacity:1; translate:-50% 0; }
+.exp-item.is-on .exp-tip{ display:none; }
+@media (hover:none){ .exp-tip{ display:none; } }
+/* textos do elemento */
+.exp-label{ display:flex; flex-direction:column; align-items:center; gap:6px; }
+.exp-num{ font:italic 400 22px/1 var(--serif); color:var(--muted); }
+.exp-more{ display:grid; grid-template-rows:0fr; max-width:520px; transition:grid-template-rows .7s var(--ease-out); }
+.exp-more > span{ overflow:hidden; }
+.exp-more .body{ display:block; padding-top:8px; opacity:0; transition:opacity .5s; }
+.exp-item.is-on .exp-more{ grid-template-rows:1fr; }
+.exp-item.is-on .exp-more .body{ opacity:1; transition-delay:.25s; }
+.exp-go{ margin-top:8px; display:inline-flex; align-items:center; gap:6px; color:var(--accent); font-size:15px; }
+.exp-go i{ transition:transform .4s var(--ease-out); }
+.exp-item:hover .exp-go i{ transform:translateX(3px); }
+.exp-item.is-on .exp-go{ display:none; }
+.exp-done{ position:absolute; top:20px; right:20px; z-index:2; display:none; align-items:center; gap:6px; padding:6px 12px; border-radius:999px; background:#dcf3d6; font-size:13px; }
+.exp-done i{ color:var(--status); font-size:16px; }
+.exp-item.is-done .exp-done{ display:inline-flex; animation:stamp .6s var(--spring) both; }
+/* escolhido x recuado */
+.exp-item.is-on{ cursor:default; }
+.exp-item.is-on:hover{ transform:none; }
+.exp-item.is-on:hover .exp-art{ transform:none; }
+.exp-item.is-on .exp-art{ width:min(100%,380px); }
+.exp .exp-item.is-dim{ opacity:.55; filter:grayscale(.6); padding:28px 20px 24px; gap:16px; }
+.exp .exp-item.is-dim:hover{ opacity:.9; filter:none; }
+.exp-item.is-dim .exp-art{ width:min(100%,150px); }
+.exp-item.is-dim .exp-label > .body{ display:none; }
+.exp-item.is-dim .exp-svg *{ animation-play-state:paused; }
+.exp-item.is-dim .exp-done{ top:12px; right:12px; padding:4px 10px; font-size:12px; }
+
+/* ilustrações: animações contínuas (idle) */
+.sm-body{ transform-box:fill-box; transform-origin:50% 50%; animation:smBreath 4.2s var(--ease) infinite; }
+@keyframes smBreath{ 50%{ transform:translateY(-2px) scale(1.045); } }
+.sm-glint{ animation:glint 4.2s var(--ease) infinite; }
+@keyframes glint{ 0%,100%{ opacity:.3; } 50%{ opacity:1; } }
+.spark{ transform-box:fill-box; transform-origin:center; animation:twinkle 3s var(--ease) var(--d,0s) infinite; }
+@keyframes twinkle{ 0%,100%{ transform:scale(.55) rotate(0deg); opacity:.5; } 50%{ transform:scale(1.1) rotate(25deg); opacity:1; } }
+.br-body{ transform-box:fill-box; transform-origin:50% 60%; animation:brPulse 2.8s var(--ease) infinite; }
+@keyframes brPulse{ 0%,44%,100%{ transform:scale(1); } 12%{ transform:scale(1.035); } 26%{ transform:scale(1.015); } }
+.syn-link{ stroke-dasharray:6 8; animation:synFlow 1.8s linear infinite; }
+.exp-item:hover .syn-link{ animation-duration:.9s; }
+@keyframes synFlow{ to{ stroke-dashoffset:-28; } }
+.syn-node{ transform-box:fill-box; transform-origin:center; animation:synBlink 2.4s var(--ease) var(--d,0s) infinite; }
+@keyframes synBlink{ 0%,100%{ opacity:.35; transform:scale(.8); } 45%{ opacity:1; transform:scale(1.25); } }
+
+/* painel com abas */
+.exp-panel{ margin-top:48px; padding:32px; border-radius:24px; position:relative; scroll-margin-top:100px; }
+.exp-panel.is-in{ animation:expPanelIn .9s var(--ease-out) both; }
+.exp-panel.is-out{ animation:expPanelOut .35s var(--ease) both; }
+@keyframes expPanelIn{ from{ opacity:0; transform:translateY(40px); } }
+@keyframes expPanelOut{ to{ opacity:0; transform:translateY(24px); } }
+.exp-head{ display:grid; grid-template-columns:auto 1fr auto; grid-template-areas:"back theme prog"; align-items:center; gap:24px; }
+.exp-back{ grid-area:back; }
+.exp-back i{ font-size:18px; transition:transform .4s var(--ease-out); }
+.exp-back:hover i{ transform:translateX(-3px); }
+.exp-theme{ grid-area:theme; justify-self:center; display:flex; align-items:center; gap:14px; text-align:left; }
+.exp-theme-ico{ width:52px; height:52px; border-radius:16px; background:var(--chip); display:grid; place-items:center; font-size:26px; flex:none; }
+.exp-progress{ grid-area:prog; width:260px; display:flex; flex-direction:column; gap:8px; }
+.exp-progress-txt{ display:flex; justify-content:space-between; gap:12px; }
+.exp-progress-txt b{ font-weight:400; color:var(--text); }
+.exp-bar{ position:relative; height:8px; border-radius:999px; background:var(--hair); overflow:hidden; }
+.exp-bar i{ position:absolute; top:0; bottom:0; left:0; width:0; border-radius:inherit; background:var(--accent); overflow:hidden; transition:width .7s var(--ease-out), background-color .4s; }
+.exp-bar i::after{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.75),rgba(255,255,255,0)); transform:translateX(-100%); }
+.exp-bar.bump i::after{ animation:barShine .9s var(--ease-out); }
+@keyframes barShine{ to{ transform:translateX(100%); } }
+.exp-panel.is-done .exp-bar i{ background:var(--status); }
+/* faixa de tema completo */
+.exp-complete{ display:none; margin-top:24px; padding:14px 14px 14px 18px; align-items:center; gap:16px; flex-wrap:wrap; }
+.exp-complete .body{ flex:1; min-width:220px; }
+.exp-complete b,.exp-toast b{ font-weight:400; color:var(--text); }
+.exp-panel.is-done .exp-complete{ display:flex; animation:expIn .8s var(--spring) backwards; }
+.c-ico{ width:44px; height:44px; border-radius:50%; background:#dcf3d6; color:var(--status); display:grid; place-items:center; font-size:22px; flex:none; }
+/* abas */
+.exp-tabs-wrap{ display:flex; justify-content:center; margin:32px 0; }
+.exp-tabs{ position:relative; display:inline-flex; gap:4px; padding:6px; max-width:100%; overflow-x:auto; scrollbar-width:none; border-radius:999px; background:var(--white); box-shadow:var(--ring),var(--drop); }
+.exp-tabs::-webkit-scrollbar{ display:none; }
+.exp-tab{ position:relative; z-index:1; display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font-size:15px; letter-spacing:-.01em; white-space:nowrap; color:var(--muted); transition:color .35s; }
+.exp-tab i{ font-size:18px; }
+.exp-tab .t-short{ display:none; }
+.exp-tab:hover{ color:var(--text); }
+.exp-tab[aria-selected="true"]{ color:var(--inverse); }
+.exp-tab-ind{ position:absolute; z-index:0; top:6px; bottom:6px; left:0; width:0; border-radius:999px; background:var(--ink); box-shadow:var(--btn-shadow); transition:transform .55s var(--spring), width .55s var(--spring); }
+.exp-pane.is-entering,.quiz-end.is-entering{ animation:paneIn .55s var(--ease-out) backwards; }
+@keyframes paneIn{ from{ opacity:0; transform:translateY(12px); } }
+/* entrada escalonada dos cards (fill "backwards": não trava o hover) */
+.exp-in{ animation:expIn .7s var(--ease-out) calc(var(--i,0) * 90ms + 100ms) backwards; }
+@keyframes expIn{ from{ opacity:0; transform:translateY(28px); } }
+
+/* aba 1: importância */
+.imp-grid{ display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:24px; }
+.imp-card{ grid-column:span 2; padding:28px; display:flex; flex-direction:column; gap:14px; text-align:left; transition:transform .5s var(--ease-out), box-shadow .5s var(--ease-out); }
+.imp-card:nth-child(-n+2){ grid-column:span 3; }
+.imp-card:hover{ transform:translateY(-4px); box-shadow:0 0 0 8px rgba(255,255,255,.5),18px 28px 36px rgba(0,0,0,.12); }
+.imp-top{ display:flex; justify-content:space-between; align-items:flex-start; }
+.imp-ico{ position:relative; width:52px; height:52px; border-radius:16px; background:var(--chip); display:grid; place-items:center; font-size:26px; transition:transform .6s var(--spring); }
+.imp-card:hover .imp-ico{ transform:rotate(-8deg) scale(1.06); }
+.imp-check{ position:absolute; right:-7px; bottom:-7px; font-size:22px; color:var(--status); background:var(--white); border-radius:50%; transform:scale(0); transition:transform .5s var(--spring); }
+.imp-card.seen .imp-check{ transform:scale(1); }
+.imp-card .plus{ width:32px; height:32px; flex:none; position:relative; border-radius:50%; background:#f2f2f2; transition:background-color .3s, transform .5s var(--ease-out); }
+.imp-card .plus::before,.imp-card .plus::after{ content:""; position:absolute; left:50%; top:50%; width:14px; height:1.6px; background:var(--accent); translate:-50% -50%; border-radius:2px; transition:background-color .3s; }
+.imp-card .plus::after{ transform:rotate(90deg); }
+.imp-card[aria-expanded="true"] .plus{ transform:rotate(135deg); background:var(--accent); }
+.imp-card[aria-expanded="true"] .plus::before,.imp-card[aria-expanded="true"] .plus::after{ background:var(--white); }
+.imp-more{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s var(--ease-out); }
+.imp-more > span{ overflow:hidden; }
+.imp-tip{ display:flex; gap:12px; margin-top:6px; padding:16px; border-radius:10px; background:#f2f2f2; font-size:15px; line-height:1.55; letter-spacing:-.01em;
+  opacity:0; transform:translateY(-8px); transition:opacity .4s, transform .5s var(--ease-out); }
+.imp-tip i{ color:var(--accent); font-size:20px; flex:none; margin-top:1px; }
+.imp-tip b{ display:block; font-weight:500; margin-bottom:2px; }
+.imp-card[aria-expanded="true"] .imp-more{ grid-template-rows:1fr; }
+.imp-card[aria-expanded="true"] .imp-tip{ opacity:1; transform:none; transition-delay:.1s; }
+
+/* aba 2: mito ou verdade (flip 3D) */
+.mv-intro{ display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:6px 14px; margin-bottom:24px; text-align:center; font-size:14px; }
+.mv-intro i{ color:var(--accent); font-size:16px; vertical-align:-3px; }
+.mv-grid{ display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:24px; }
+.mv-card{ grid-column:span 2; display:grid; min-height:250px; perspective:1400px; text-align:left; }
+.mv-card:nth-child(4){ grid-column:2 / span 2; }
+.mv-card:nth-child(5){ grid-column:4 / span 2; }
+.mv-inner{ display:grid; transform-style:preserve-3d; transition:transform .9s var(--spring); }
+.mv-face{ grid-area:1 / 1; display:flex; flex-direction:column; gap:16px; padding:28px; -webkit-backface-visibility:hidden; backface-visibility:hidden; }
+.mv-card:hover .mv-inner{ transform:rotateY(-8deg); }
+.mv-card.flipped .mv-inner{ transform:rotateY(180deg); }
+.mv-card.flipped:hover .mv-inner{ transform:rotateY(172deg); }
+.mv-back{ transform:rotateY(180deg); }
+.mv-back.is-mito{ background:#ffe1d6; }
+.mv-back.is-verdade{ background:#dcf3d6; }
+.mv-back .body{ flex:1; color:var(--text); }
+.mv-q{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.mv-q b{ font:italic 400 56px/.8 var(--serif); color:var(--accent); }
+.mv-front .title{ flex:1; }
+.mv-hint{ display:inline-flex; align-items:center; gap:6px; }
+.mv-hint i{ font-size:16px; color:var(--accent); }
+.mv-badge{ align-self:flex-start; display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:999px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--text); rotate:-4deg; box-shadow:0 0 0 6px rgba(255,255,255,.35); }
+.mv-badge i{ font-size:16px; }
+.is-mito .mv-badge{ background:var(--accent); }
+.is-verdade .mv-badge{ background:var(--status); }
+.mv-card.flipped .mv-badge{ animation:stamp .6s var(--spring) .35s backwards; }
+@keyframes stamp{ from{ opacity:0; transform:scale(1.8); } }
+
+/* aba 3: quiz rápido */
+.quiz{ max-width:640px; margin:0 auto; padding:32px; text-align:center; }
+.quiz-play,.quiz-end{ display:flex; flex-direction:column; gap:24px; }
+.quiz-play[hidden],.quiz-end[hidden]{ display:none; }
+.quiz-end{ align-items:center; gap:16px; padding:8px 0; }
+.quiz-top{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.quiz-top b{ font-weight:400; color:var(--text); }
+.quiz-score{ font-size:14px; padding:6px 14px; }
+.quiz-score i{ color:var(--accent); }
+.quiz-score.pop{ animation:pop .5s var(--spring); }
+@keyframes pop{ 50%{ transform:scale(1.18); } }
+.quiz-dots{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; }
+.quiz-dots i{ height:6px; border-radius:999px; background:var(--hair); transition:background-color .4s; }
+.quiz-dots i.now{ background:var(--ink); }
+.quiz-dots i.ok{ background:var(--status); }
+.quiz-dots i.no{ background:var(--accent); }
+.quiz-q{ min-height:2.7em; display:flex; align-items:center; justify-content:center; }
+.quiz-q.swap{ animation:paneIn .5s var(--ease-out) backwards; }
+.quiz-q em{ font:italic 400 1.3em/1 var(--serif); color:var(--accent); }
+.quiz-opts{ display:flex; justify-content:center; gap:16px; flex-wrap:wrap; }
+.quiz-opt{ min-width:160px; padding:12px 24px; transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background-color .3s, opacity .3s; }
+.quiz-opt i{ font-size:20px; }
+.quiz-opt:disabled{ cursor:default; transform:none; }
+.quiz-opt.right{ background:#dcf3d6; border-color:#dcf3d6; }
+.quiz-opt.wrong{ background:#ffe1d6; border-color:#ffe1d6; }
+.quiz-opt.fade{ opacity:.45; }
+.quiz-fb{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .6s var(--ease-out); }
+.quiz-fb > div{ overflow:hidden; }
+.quiz-fb-in{ display:flex; flex-direction:column; align-items:center; gap:14px; padding:4px 0 8px; opacity:0; transform:translateY(-8px); transition:opacity .4s, transform .5s var(--ease-out); }
+.quiz-fb.show{ grid-template-rows:1fr; }
+.quiz-fb.show .quiz-fb-in{ opacity:1; transform:none; transition-delay:.1s; }
+.quiz-res{ display:block; }
+.quiz-res i{ font-size:24px; vertical-align:-5px; margin-right:8px; }
+.quiz-res.ok i{ color:var(--status); }
+.quiz-res.no i{ color:var(--accent); }
+.quiz-end .numeral sup{ font-size:.45em; vertical-align:.9em; color:var(--accent); margin-left:2px; }
+.quiz-end-btns{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:8px; }
+.quiz-end-btns .btn-secondary i{ font-size:18px; }
+
+.exp-note{ text-align:center; margin-top:40px; }
+
+/* celebração */
+.exp-confetti{ position:fixed; inset:0; z-index:90; pointer-events:none; overflow:hidden; }
+.exp-confetti i{ position:absolute; display:block; will-change:transform,opacity; }
+.exp-toast{ position:fixed; left:50%; bottom:24px; z-index:91; max-width:calc(100% - 32px); padding:8px 8px 8px 10px; gap:12px; font-size:15px; letter-spacing:-.01em;
+  opacity:0; translate:-50% 150%; transition:translate .6s var(--spring), opacity .4s; }
+.exp-toast.show{ opacity:1; translate:-50% 0; }
+.exp-toast-x{ width:36px; height:36px; border-radius:50%; display:grid; place-items:center; flex:none; font-size:16px; color:var(--muted); transition:background-color .3s, color .3s; }
+.exp-toast-x:hover{ background:#f2f2f2; color:var(--text); }
+
+@media (max-width:1099.98px){
+  .exp-head{ grid-template-columns:1fr auto; grid-template-areas:"theme back" "prog prog"; gap:20px; }
+  .exp-theme{ justify-self:start; }
+  .exp-progress{ width:100%; }
+  .imp-grid,.mv-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .imp-card,.imp-card:nth-child(-n+2),.mv-card,.mv-card:nth-child(4),.mv-card:nth-child(5){ grid-column:auto; }
+  .imp-card:last-child,.mv-card:last-child{ grid-column:1 / -1; }
+}
+@media (max-width:809.98px){
+  .exp-stage,.exp[data-on] .exp-stage{ grid-template-columns:minmax(0,1fr); gap:24px; }
+  .exp-item{ padding:32px 20px 24px; }
+  .exp-art{ width:min(100%,260px); }
+  .exp-item.is-on .exp-art{ width:min(100%,280px); }
+  .exp .exp-item.is-dim{ flex-direction:row; align-items:center; text-align:left; padding:12px 16px; gap:14px; }
+  .exp-item.is-dim .exp-art{ width:64px; flex:none; }
+  .exp-item.is-dim .exp-label{ align-items:flex-start; gap:0; }
+  .exp-item.is-dim .exp-num{ display:none; }
+  .exp-item.is-dim .exp-go{ margin-top:2px; }
+  .exp-item.is-dim .exp-done{ position:static; order:2; margin-left:auto; white-space:nowrap; }
+  .exp-panel{ margin-top:32px; padding:20px; border-radius:16px; }
+  .imp-grid,.mv-grid{ grid-template-columns:minmax(0,1fr); gap:16px; }
+  .imp-card:last-child,.mv-card:last-child{ grid-column:auto; }
+  .imp-card{ padding:24px; }
+  .mv-card{ min-height:220px; }
+  .mv-face{ padding:24px; }
+  .quiz{ padding:24px 20px; }
+  .quiz-opt{ min-width:0; flex:1; }
+  .exp-toast{ bottom:88px; }
+}
+@media (max-width:560px){
+  .exp-tab{ padding:9px 13px; font-size:14px; gap:6px; }
+  .exp-tab i{ display:none; }
+  .exp-tab .t-full{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .exp-tab .t-short{ display:inline; }
+}
+
+/* --- FAQ --- */
+.faq-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr); gap:64px; align-items:start; }
+.faq-card{ padding:40px; display:flex; flex-direction:column; gap:56px; position:sticky; top:110px; }
+.faq-card .btns{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+.faq-list{ border-top:1px solid var(--hair); }
+.faq-item{ border-bottom:1px solid var(--hair); }
+.faq-q{ width:100%; display:flex; justify-content:space-between; align-items:center; gap:24px; text-align:left; padding:26px 0; font-size:20px; letter-spacing:-.025em; line-height:1.4; }
+.faq-q .plus{ width:32px; height:32px; flex:none; position:relative; border-radius:50%; transition:background-color .3s, transform .5s var(--ease-out); }
+.faq-q .plus::before,.faq-q .plus::after{ content:""; position:absolute; left:50%; top:50%; width:14px; height:1.6px; background:var(--accent); translate:-50% -50%; border-radius:2px; transition:transform .5s var(--ease-out), background-color .3s; }
+.faq-q .plus::after{ transform:rotate(90deg); }
+.faq-q:hover .plus{ background:#fff; }
+.faq-item.open .plus{ transform:rotate(135deg); background:var(--accent); }
+.faq-item.open .plus::before,.faq-item.open .plus::after{ background:#fff; }
+.faq-a{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s var(--ease-out); }
+.faq-a > div{ overflow:hidden; }
+.faq-a p{ padding:0 56px 26px 0; opacity:0; transform:translateY(-8px); transition:opacity .4s, transform .5s var(--ease-out); }
+.faq-item.open .faq-a{ grid-template-rows:1fr; }
+.faq-item.open .faq-a p{ opacity:1; transform:none; transition-delay:.1s; }
+@media (max-width:1099.98px){ .faq-grid{ grid-template-columns:1fr; gap:48px; } .faq-card{ position:relative; top:0; order:2; } }
+@media (max-width:809.98px){ .faq-q{ font-size:17px; padding:22px 0; } .faq-a p{ padding-right:0; } .faq-card{ padding:28px; gap:36px; } }
+
+/* =====================================================================
+   RODAPÉ — campo preto com gradiente radial, raios a 5% e moldura 8px
+   ===================================================================== */
+.footer-outer{ padding:0 8px 8px; }
+.footer{
+  position:relative; overflow:hidden; color:#fff; border-radius:32px;
+  background:radial-gradient(90% 70% at 50% 0%,#2e2e2e 0%,#000 70%);
+  box-shadow:0 0 0 8px var(--field);
+  padding:140px 0 40px;
+}
+.footer .rays i{ background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,0) 80%); filter:blur(10px); opacity:1; animation:none; }
+.footer-cta{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:32px; position:relative; z-index:1; }
+.footer-cta .display{ font-size:clamp(44px,6vw,96px); }
+.footer-cta .tone{ color:rgba(255,255,255,.5); }
+.footer-cta .body{ color:rgba(255,255,255,.6); max-width:460px; }
+.footer-cta .btn-primary{ background:#fff; color:#000; box-shadow:none; }
+.footer-cta .btn-primary .ico{ color:rgba(0,0,0,.5); }
+.footer-cta .btn-primary::before{ display:none; }
+.footer-cols{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; margin-top:140px; padding-top:48px; border-top:1px solid rgba(255,255,255,.12); position:relative; z-index:1; }
+.footer-cols h4{ font:italic 400 20px/1 var(--serif); color:rgba(255,255,255,.5); margin-bottom:18px; letter-spacing:0; }
+.footer-cols p,.footer-cols a{ color:rgba(255,255,255,.85); font-size:15px; line-height:1.7; letter-spacing:-.01em; }
+.footer-cols a:hover{ color:var(--accent); }
+.footer-cols ul{ list-style:none; margin:0; padding:0; }
+.footer .wordmark{ background:#fff; color:#000; box-shadow:0 0 0 8px var(--ring-dark); margin-bottom:24px; }
+.footer .socials a{ border-color:rgba(255,255,255,.25); color:rgba(255,255,255,.5); }
+.footer .socials a:hover{ background:#fff; color:#000; }
+.footer-bottom{ margin-top:64px; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; position:relative; z-index:1; }
+.footer-bottom .meta{ color:rgba(255,255,255,.45); }
+.giant{ position:relative; z-index:0; text-align:center; font-size:clamp(90px,22vw,330px); line-height:.8; letter-spacing:-.08em; margin-top:56px;
+  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0)); -webkit-background-clip:text; background-clip:text; color:transparent; user-select:none; }
+@media (max-width:1099.98px){ .footer-cols{ grid-template-columns:1fr 1fr; } }
+@media (max-width:809.98px){ .footer{ padding:96px 0 32px; border-radius:24px; } .footer-cols{ grid-template-columns:1fr; margin-top:96px; gap:32px; } }
+
+/* botão flutuante de WhatsApp */
+.fab{ position:fixed; right:24px; bottom:24px; z-index:55; width:60px; height:60px; border-radius:50%; background:#000; color:#fff; display:grid; place-items:center; font-size:28px;
+  box-shadow:var(--ring),var(--btn-shadow); transform:scale(0); transition:transform .5s var(--spring); }
+.fab.show{ transform:scale(1); }
+.fab:hover{ transform:scale(1.08) rotate(-8deg); }
+.fab .fab-tip{ position:absolute; right:72px; white-space:nowrap; background:#fff; color:#000; font-size:14px; padding:8px 14px; border-radius:999px; box-shadow:var(--drop);
+  opacity:0; translate:8px 0; transition:.3s var(--ease-out); pointer-events:none; }
+.fab:hover .fab-tip{ opacity:1; translate:0 0; }
+@media (max-width:809.98px){ .fab{ right:16px; bottom:16px; width:54px; height:54px; } .fab .fab-tip{ display:none; } }
+
+/* acessibilidade: menos movimento */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ animation-duration:.001s !important; animation-iteration-count:1 !important; transition-duration:.001s !important; scroll-behavior:auto !important; }
+  .marquee,.testi-row,.g-track,.rays i,.float-chip,.gem-in,.gem-shine,.v-ico::after,.exp-svg *{ animation:none !important; }
+  .reveal-words .w{ opacity:1 !important; }
+}
+:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:8px; }
+</style>
+</head>
+<body>
+
+<!-- camadas de fundo -->
+<div class="page-field" aria-hidden="true"><div class="rays"><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- =================================================================
+     NAVEGAÇÃO
+     ================================================================= -->
+<header class="nav" id="nav">
+  <a href="#topo" class="wordmark pill" aria-label="Le Face — início">
+    <span class="logo-slot">
+      <!-- 🖼️ LOGO: logo em imagens/logo.png (fundo transparente).
+           Quando a logo carrega, o monograma "LF" e o texto ao lado somem automaticamente. -->
+      <img src="imagens/logo.png" alt="Le Face" onload="this.closest('.wordmark').classList.add('has-logo')" onerror="this.remove()">
+      <span class="logo-mark">Lf</span>
+    </span>
+    <span class="wordmark-text">Le Face</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Seções">
+    <a href="#especialidades">Especialidades</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#explore">Explore</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+
+  <div class="nav-right">
+    <a href="#contato" class="btn btn-primary btn-sm">Agendar
+      <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span></button>
+  </div>
+
+  <div class="menu-panel card" id="menuPanel">
+    <nav aria-label="Menu">
+      <a href="#especialidades">Especialidades <i class="ph ph-arrow-right"></i></a>
+      <a href="#sobre">Sobre nós <i class="ph ph-arrow-right"></i></a>
+      <a href="#como-funciona">Como funciona <i class="ph ph-arrow-right"></i></a>
+      <a href="#equipe">Equipe <i class="ph ph-arrow-right"></i></a>
+      <a href="#espaco">Nosso espaço <i class="ph ph-arrow-right"></i></a>
+      <a href="#explore">Explore <i class="ph ph-arrow-right"></i></a>
+      <a href="#duvidas">Dúvidas <i class="ph ph-arrow-right"></i></a>
+      <a href="#contato">Contato <i class="ph ph-arrow-right"></i></a>
+    </nav>
+    <!-- TROQUE o número de WhatsApp (formato 55 + DDD + número) -->
+    <a class="get" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp <i class="ph ph-arrow-up-right"></i></a>
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+      <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+      <a href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" aria-label="Google Maps"><i class="ph ph-map-pin"></i></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =================================================================
+     HERO
+     ================================================================= -->
+<section class="hero" id="topo">
+  <div class="chip-wrap" aria-hidden="true">
+    <div style="--d:1.5s; position:absolute; left:6%; top:24%;"><div class="float-chip pill" style="--rot:-8deg; --chip:#ffe1d6;"><span class="chip-ico"><i class="ph ph-tooth"></i></span>Odontologia</div></div>
+    <div style="--d:1.65s; position:absolute; right:7%; top:21%;"><div class="float-chip pill" style="--rot:7deg; --chip:#e7e0ff; --bd:-2s;"><span class="chip-ico"><i class="ph ph-brain"></i></span>Psicologia</div></div>
+    <div style="--d:1.8s; position:absolute; left:9%; bottom:20%;"><div class="float-chip pill" style="--rot:5deg; --chip:#fff1c7; --bd:-4s;"><span class="chip-ico"><i class="ph ph-hand-heart"></i></span>Atendimento humanizado</div></div>
+    <div style="--d:1.95s; position:absolute; right:8%; bottom:23%;"><div class="float-chip pill" style="--rot:-6deg; --chip:#dcf3d6; --bd:-1s;"><span class="chip-ico"><i class="ph ph-heartbeat"></i></span>Saúde</div></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="status pill" data-appear style="--d:.2s">
+      <span class="dot"></span> Agenda aberta — <b>novembro e dezembro</b>
+    </div>
+
+    <h1 class="display" data-split>
+      <span class="line">Cuidado
+        <!-- 🖼️ LOGO (hero): rosto + moldura dourada da marca → imagens/logo-face.png -->
+        <span class="media-pill gem" aria-hidden="true">
+          <span class="gem-in"><img src="imagens/logo-face.png" alt=""><i class="gem-shine"></i></span>
+        </span>
+        por inteiro,</span>
+      <span class="line">do sorriso
+        <span class="media-pill ticker" id="ticker" aria-hidden="true">
+          <span class="t-item on"><span class="t-ico"><i class="ph ph-tooth"></i></span>Odontologia</span>
+          <span class="t-item"><span class="t-ico"><i class="ph ph-brain"></i></span>Psicologia</span>
+        </span>
+        <span class="tone">à mente.</span></span>
+    </h1>
+
+    <p class="body hero-sub" data-appear style="--d:1.1s">
+      Na Le Face, dentistas, psicólogos e especialistas em saúde trabalham juntos para cuidar de você — em um só lugar, com tempo, escuta e tecnologia.
+    </p>
+
+    <div class="hero-ctas" data-appear style="--d:1.25s">
+      <span class="ring">
+        <a href="#contato" class="btn btn-primary">Agendar avaliação
+          <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+        </a>
+      </span>
+      <a href="#especialidades" class="btn btn-secondary">Conhecer especialidades</a>
+    </div>
+
+    <!-- 📍 Link do Google Maps (mesmo link usado no menu e no rodapé) -->
+    <a class="visit pill" href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" data-appear style="--d:1.4s">
+      <span class="v-ico"><i class="ph-fill ph-map-pin"></i></span>
+      <span class="v-txt"><b>Venha nos conhecer!</b><span class="meta">Ver no Google Maps</span></span>
+      <span class="v-arrow"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+    </a>
+  </div>
+</section>
+
+<!-- faixa inclinada com marquee -->
+<div class="band-wrap" aria-hidden="true">
+  <div class="band">
+    <div class="marquee" id="marquee">
+      <span>Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i> Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i> Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i></span>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================
+     SOBRE
+     ================================================================= -->
+<section class="section" id="sobre">
+  <div class="light-sweep" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="intro-grid">
+      <div style="display:flex; flex-direction:column; gap:32px;">
+        <div class="eyebrow left" data-reveal><em>Sobre a Le Face!</em></div>
+        <p class="lead reveal-words" id="revealWords">
+          Acreditamos que saúde não se divide em partes. Por isso reunimos odontologia e psicologia em um só endereço, com atendimento humanizado — profissionais que escutam, conversam entre si e montam um plano pensado para a sua história.
+        </p>
+        <div data-reveal><a href="#equipe" class="btn btn-secondary">Conheça a equipe</a></div>
+      </div>
+
+      <div class="intro-photo" data-reveal="tilt" style="--r-from:12deg">
+        <div class="card">
+          <!-- 📷 FOTO: Dr. Guilherme Sudati, fundador → imagens/sobre/guilherme-sudati.jpg (vertical 2:3) -->
+          <div class="photo" data-label="sobre/guilherme-sudati.jpg"><img src="imagens/sobre/guilherme-sudati.jpg" alt="Dr. Guilherme Sudati, cirurgião-dentista e fundador da Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div>
+        <div class="badge card">
+          <span class="b-ico"><i class="ph ph-tooth"></i></span>
+          <div><b>Dr. Guilherme Sudati</b><span class="meta">Fundador da Le Face</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat card" data-reveal style="--d:0s"><span class="numeral"><span data-count="12">0</span><sup>+</sup></span><span class="body">anos cuidando de famílias</span></div>
+      <div class="stat card" data-reveal style="--d:.1s"><span class="numeral"><span data-count="18">0</span></span><span class="body">especialistas integrados</span></div>
+      <div class="stat card" data-reveal style="--d:.2s"><span class="numeral"><span data-count="4.9" data-dec="1">0</span><sup>★</sup></span><span class="body">nota média no Google</span></div>
+      <div class="stat card" data-reveal style="--d:.3s"><span class="numeral"><span data-count="3.2" data-dec="1">0</span>k</span><span class="body">pacientes atendidos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     ESPECIALIDADES
+     ================================================================= -->
+<section class="section" id="especialidades">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Especialidades!</em></div>
+      <h2 class="h2">Tudo o que você precisa, <span class="tone">em um só lugar.</span></h2>
+      <p class="body">Uma equipe multidisciplinar que conversa entre si — para que o seu tratamento seja completo, coerente e sem idas e vindas.</p>
+    </div>
+
+    <div class="services">
+      <article class="service card" data-reveal style="--d:0s; --chip:#ffe1d6;">
+        <div class="s-top"><span class="s-ico"><i class="ph ph-tooth"></i></span><span class="s-num">01</span></div>
+        <h3 class="h3">Odontologia</h3>
+        <p class="body">Clínica geral, ortodontia, implantes, lentes e clareamento com tecnologia digital, anestesia sem dor e todo o tempo necessário para você se sentir seguro em cada etapa.</p>
+        <div class="tags"><span class="tag">Implantes</span><span class="tag">Alinhadores</span><span class="tag">Clareamento</span><span class="tag">Odontopediatria</span></div>
+        <a href="#contato" class="more">Agendar <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="service card" data-reveal style="--d:.1s; --chip:#e7e0ff;">
+        <div class="s-top"><span class="s-ico"><i class="ph ph-brain"></i></span><span class="s-num">02</span></div>
+        <h3 class="h3">Psicologia</h3>
+        <p class="body">Psicoterapia para crianças, adolescentes, adultos e casais — presencial ou online, em um ambiente acolhedor e sigiloso, com escuta sem julgamentos.</p>
+        <div class="tags"><span class="tag">TCC</span><span class="tag">Ansiedade</span><span class="tag">Infantil</span><span class="tag">Online</span></div>
+        <a href="#contato" class="more">Agendar <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     COMO FUNCIONA
+     ================================================================= -->
+<section class="section process-section" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Como funciona!</em></div>
+      <h2 class="h2">Cuidar de você é
+        <span class="circled">simples.
+          <svg class="draw" viewBox="0 0 210 70" preserveAspectRatio="none" aria-hidden="true" style="--dd:.7s"><path pathLength="1" d="M18 38 C12 14 82 4 140 8 C196 12 212 40 172 54 C122 70 34 66 14 46 C2 32 32 12 78 9" fill="none" stroke="#ff3700" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        </span>
+        <span class="tone">Em quatro passos.</span>
+      </h2>
+    </div>
+
+    <div class="steps">
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:.9s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:1.1s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:1.3s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+      <div class="step card" data-reveal="tilt" style="--r:-3deg; --r-from:-10deg; --d:0s">
+        <span class="numeral">1</span>
+        <span class="s-chip"><i class="ph ph-calendar-check"></i>2 minutos</span>
+        <h3 class="h3">Agende</h3>
+        <p class="body">Pelo WhatsApp, telefone ou aqui no site. Escolha o melhor horário para você.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:2deg; --r-from:10deg; --d:.12s">
+        <span class="numeral">2</span>
+        <span class="s-chip"><i class="ph ph-stethoscope"></i>Avaliação</span>
+        <h3 class="h3">Avaliação integrada</h3>
+        <p class="body">Uma conversa sem pressa e exames digitais para entender você por inteiro.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:-2deg; --r-from:-10deg; --d:.24s">
+        <span class="numeral">3</span>
+        <span class="s-chip"><i class="ph ph-clipboard-text"></i>Sob medida</span>
+        <h3 class="h3">Plano personalizado</h3>
+        <p class="body">Os especialistas montam juntos um plano claro, com etapas, prazos e valores.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:3deg; --r-from:10deg; --d:.36s">
+        <span class="numeral">4</span>
+        <span class="s-chip"><i class="ph ph-heart"></i>Contínuo</span>
+        <h3 class="h3">Acompanhamento</h3>
+        <p class="body">Lembretes, retornos e um time que acompanha sua evolução de perto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     EQUIPE
+     Para cada profissional: troque a foto (imagens/equipe/NOME.jpg), nome, especialidade e registro.
+     Para adicionar mais: duplique um <article class="member">.
+     ================================================================= -->
+<section class="section" id="equipe">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Nossa equipe!</em></div>
+      <h2 class="h2">Gente que cuida <span class="tone">de gente.</span></h2>
+      <p class="body">Profissionais experientes, atualizados e — acima de tudo — atenciosos. Conheça quem vai cuidar de você.</p>
+    </div>
+
+    <div class="team">
+      <article class="member card" data-reveal="tilt" style="--r:-3deg; --r-from:-12deg; --d:0s">
+        <!-- 📷 FOTO: profissional 1 → imagens/equipe/guilherme.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/guilherme.jpg"><img src="imagens/equipe/guilherme.jpg" alt="Dr. Guilherme Sudati" style="object-position:50% 8%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dr. Guilherme Sudati</h3>
+          <a class="m-ig" href="https://www.instagram.com/guilherme_sudati/" target="_blank" rel="noopener">@guilherme_sudati</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/guilherme_sudati/" target="_blank" rel="noopener" aria-label="Instagram de Dr. Guilherme Sudati"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:2deg; --r-from:12deg; --d:.1s">
+        <!-- 📷 FOTO: profissional 2 → imagens/equipe/isabela.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/isabela.jpg"><img src="imagens/equipe/isabela.jpg" alt="Dra. Isabela Cristina Signori" style="object-position:50% 22%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dra. Isabela Cristina Signori</h3>
+          <a class="m-ig" href="https://www.instagram.com/dra.isabelasignori/" target="_blank" rel="noopener">@dra.isabelasignori</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/dra.isabelasignori/" target="_blank" rel="noopener" aria-label="Instagram de Dra. Isabela Cristina Signori"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:-2deg; --r-from:-12deg; --d:.2s">
+        <!-- 📷 FOTO: profissional 3 → imagens/equipe/lais.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/lais.jpg"><img src="imagens/equipe/lais.jpg" alt="Laís Caetano Sudati" style="object-position:50% 18%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Laís Caetano Sudati</h3>
+          <a class="m-ig" href="https://www.instagram.com/psico_infantojuvenil_lais/" target="_blank" rel="noopener">@psico_infantojuvenil_lais</a>
+          <p class="body">Psicóloga</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Psicologia</span>
+          <div class="socials"><a href="https://www.instagram.com/psico_infantojuvenil_lais/" target="_blank" rel="noopener" aria-label="Instagram de Laís Caetano Sudati"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:3deg; --r-from:12deg; --d:.3s">
+        <!-- 📷 FOTO: profissional 4 → imagens/equipe/nathalia.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/nathalia.jpg"><img src="imagens/equipe/nathalia.jpg" alt="Dra. Nathalia Rampanelli" style="object-position:50% 15%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dra. Nathalia Rampanelli</h3>
+          <a class="m-ig" href="https://www.instagram.com/dentista.nathaliarampanelli/" target="_blank" rel="noopener">@dentista.nathaliarampanelli</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/dentista.nathaliarampanelli/" target="_blank" rel="noopener" aria-label="Instagram de Dra. Nathalia Rampanelli"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="team-cta" data-reveal>
+      <span class="pill status"><span class="dot"></span> 18 especialistas · <b>atendimento de seg. a sáb.</b></span>
+      <a href="#contato" class="btn btn-secondary">Agendar com um especialista</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     NOSSO ESPAÇO — moldura escura com tickers verticais
+     📷 FOTOS: imagens/espaco/01.jpg … 09.jpg (verticais 4:5). O JS duplica as colunas para o loop infinito.
+     ================================================================= -->
+<section class="section" id="espaco" style="padding-top:40px">
+  <div class="wrap" style="max-width:1440px; width:min(100% - 48px, 1440px);">
+    <div class="dark-frame gallery" id="gallery" data-reveal="scale">
+      <div class="gallery-cols">
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/01.jpg"><img src="imagens/espaco/01.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/02.jpg"><img src="imagens/espaco/02.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/03.jpg"><img src="imagens/espaco/03.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/04.jpg"><img src="imagens/espaco/04.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/05.jpg"><img src="imagens/espaco/05.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/06.jpg"><img src="imagens/espaco/06.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/07.jpg"><img src="imagens/espaco/07.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/08.jpg"><img src="imagens/espaco/08.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/09.jpg"><img src="imagens/espaco/09.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+      </div>
+      <div class="g-shade"></div>
+      <div class="g-shade bottom"></div>
+      <div class="g-head">
+        <div class="eyebrow on-dark"><em>Nosso espaço!</em></div>
+        <h2 class="h2">Um lugar pensado <span style="color:rgba(255,255,255,.5)">para acalmar.</span></h2>
+        <p class="body">Luz natural, salas silenciosas e equipamentos de última geração. Você vai se sentir em casa — só que mais bem cuidado.</p>
+      </div>
+    </div>
+  </div>
+  <div class="cursor-badge" id="cursorBadge" aria-hidden="true">
+    <span><svg viewBox="0 0 100 100"><defs><path id="circ" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text><textPath href="#circ">conheça · nosso · espaço · </textPath></text></svg></span>
+    <i class="ph ph-eye"></i>
+  </div>
+</section>
+
+<!-- =================================================================
+     DEPOIMENTOS
+     ================================================================= -->
+<section class="section testi-section" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Depoimentos!</em></div>
+      <h2 class="h2">Sorrisos que <span class="tone">falam por nós.</span></h2>
+      <span class="pill google"><i class="ph-fill ph-google-logo" style="font-size:18px"></i><b>4,9</b><span class="stars">★★★★★</span><span class="tone">320 avaliações</span></span>
+    </div>
+  </div>
+  <!-- Troque pelos depoimentos reais dos pacientes (com autorização) -->
+  <div class="testi-row" id="testiRow">
+    <figure class="testi card" style="--r:-1.5deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Eu tinha pavor de dentista. A equipe da Le Face mudou completamente minha relação com o tratamento. Atendimento impecável.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#ffe1d6">C</span><div><b>Camila R.</b><span class="meta">Paciente de Ortodontia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“A terapia aqui foi um divisor de águas. Ambiente acolhedor e uma escuta que eu nunca tinha encontrado.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#e7e0ff">J</span><div><b>João P.</b><span class="meta">Paciente de Psicologia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:-1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Fiz implante e comecei a terapia no mesmo lugar. Organização nota 10, tudo explicado com clareza e muito carinho.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#dcf3d6">M</span><div><b>Márcia S.</b><span class="meta">Implantodontia + Psicologia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:1.5deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Fui ouvida de verdade. Explicaram cada etapa, respeitaram o meu tempo e me senti segura do início ao fim.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#fff1c7">L</span><div><b>Larissa M.</b><span class="meta">Atendimento humanizado</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:-1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Levo meus dois filhos. A equipe tem um carinho enorme com as crianças — eles adoram ir!”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#d9ecff">R</span><div><b>Ricardo T.</b><span class="meta">Odontopediatria</span></div></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =================================================================
+     EXPLORE — sorriso & mente (seção interativa)
+     Os textos dos cards (importância, mito ou verdade e quiz) ficam no
+     <script> do fim da página, no objeto EXP_DATA: edite por lá.
+     ================================================================= -->
+<section class="section" id="explore">
+  <div class="light-sweep" aria-hidden="true" style="transform:scaleX(-1)"></div>
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Explore!</em></div>
+      <h2 class="h2">Do sorriso à mente, <span class="tone">tudo se conecta.</span></h2>
+      <p class="body">Escolha um dos dois e descubra, de um jeito leve, por que esse cuidado faz tanta diferença: dicas práticas, mitos, verdades e um quiz rápido.</p>
+    </div>
+
+    <div class="exp" id="exp">
+      <div class="exp-stage">
+        <!-- SORRISO -->
+        <button type="button" class="exp-item card" data-theme="sorriso" aria-expanded="false" aria-controls="exp-sorriso" data-reveal="tilt" style="--chip:#ffe1d6; --r-from:-8deg; --d:0s">
+          <span class="exp-done"><i class="ph-fill ph-check-circle"></i>Tema completo</span>
+          <span class="exp-art">
+            <span class="exp-tip pill"><i class="ph ph-cursor-click"></i><span class="exp-tip-txt">Clique para explorar</span></span>
+            <svg class="exp-svg" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="smMouth"><path d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/></clipPath>
+              </defs>
+              <g class="sm-body" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path fill="#ff3700" d="M30 119C50 97 78 84 103 84C110 84 115 88 120 93C125 88 130 84 137 84C162 84 190 97 210 119C194 162 160 188 120 188C80 188 46 162 30 119Z"/>
+                <path fill="#2b2b2b" stroke="none" d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/>
+                <g clip-path="url(#smMouth)" stroke-width="3">
+                  <path fill="#ffdbe8" d="M70 172C78 150 100 142 120 142C140 142 162 150 170 172Z"/>
+                  <path fill="none" d="M120 148V166"/>
+                  <rect fill="#fff" x="99" y="92" width="21" height="46" rx="6"/>
+                  <rect fill="#fff" x="120" y="92" width="21" height="46" rx="6"/>
+                  <rect fill="#fff" x="81" y="92" width="18" height="43" rx="6"/>
+                  <rect fill="#fff" x="141" y="92" width="18" height="43" rx="6"/>
+                  <rect fill="#fff" x="66" y="92" width="15" height="39" rx="6"/>
+                  <rect fill="#fff" x="159" y="92" width="15" height="39" rx="6"/>
+                  <rect fill="#fff" x="53" y="92" width="13" height="34" rx="5"/>
+                  <rect fill="#fff" x="174" y="92" width="13" height="34" rx="5"/>
+                </g>
+                <path fill="none" d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/>
+                <path class="sm-glint" fill="none" stroke="#fff" stroke-width="4" d="M150 176C162 172 172 166 180 158"/>
+                <path class="sm-glint" fill="none" stroke="#fff" stroke-width="4" d="M62 103C68 99 74 96 82 94"/>
+              </g>
+              <g stroke="#000" stroke-width="2.5" stroke-linejoin="round" fill="#fff">
+                <g transform="translate(200 62)"><path class="spark" d="M0-14C2-2 2-2 14 0C2 2 2 2 0 14C-2 2-2 2-14 0C-2-2-2-2 0-14Z"/></g>
+                <g transform="translate(222 92)"><path class="spark" style="--d:-1s" d="M0-8C1-1 1-1 8 0C1 1 1 1 0 8C-1 1-1 1-8 0C-1-1-1-1 0-8Z"/></g>
+                <g transform="translate(36 72)"><path class="spark" style="--d:-2s" d="M0-10C1.5-1.5 1.5-1.5 10 0C1.5 1.5 1.5 1.5 0 10C-1.5 1.5-1.5 1.5-10 0C-1.5-1.5-1.5-1.5 0-10Z"/></g>
+                <g transform="translate(108 117)"><path class="spark" style="--d:-.5s" stroke-width="2" d="M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z"/></g>
+              </g>
+            </svg>
+          </span>
+          <span class="exp-label">
+            <span class="exp-num">01</span>
+            <span class="h3">Sorriso</span>
+            <span class="body">Cuidado com os dentes</span>
+            <span class="exp-more"><span><span class="body">Seu sorriso conversa com o corpo todo: da digestão ao coração, passando pela autoestima. Veja por que esse cuidado vale tanto.</span></span></span>
+            <span class="exp-go"><span class="exp-go-txt">Explorar</span><i class="ph ph-arrow-right"></i></span>
+          </span>
+        </button>
+
+        <!-- MENTE -->
+        <button type="button" class="exp-item card" data-theme="mente" aria-expanded="false" aria-controls="exp-mente" data-reveal="tilt" style="--chip:#e7e0ff; --r-from:8deg; --d:.12s">
+          <span class="exp-done"><i class="ph-fill ph-check-circle"></i>Tema completo</span>
+          <span class="exp-art">
+            <span class="exp-tip pill"><i class="ph ph-cursor-click"></i><span class="exp-tip-txt">Clique para explorar</span></span>
+            <svg class="exp-svg" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+              <g class="br-body" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path fill="#fff" d="M126 150C130 166 129 182 124 200H146C144 184 146 168 154 154Z"/>
+                <path fill="#fff" d="M146 150C146 170 166 184 188 178C206 173 210 152 196 140Z"/>
+                <path fill="none" stroke-width="3" d="M156 160C168 168 184 168 196 160M164 172C174 176 186 175 194 170"/>
+                <path fill="#fff" d="M54 150C34 144 26 120 38 102C26 82 38 58 62 55C70 36 96 28 112 39C126 25 152 26 162 40C182 32 204 46 203 66C220 76 222 104 208 116C214 134 196 148 176 142C166 154 148 158 136 150C122 162 98 164 86 154C74 162 58 160 54 150Z"/>
+                <g fill="none" stroke-width="3">
+                  <path d="M80 133C100 121 122 119 150 111"/>
+                  <path d="M138 38C130 56 144 66 134 82C128 94 138 102 132 116"/>
+                  <path d="M56 82C68 76 74 88 88 82"/>
+                  <path d="M62 110C74 102 84 114 98 106"/>
+                  <path d="M94 56C100 66 92 74 100 86"/>
+                  <path d="M112 66C104 76 116 86 108 98"/>
+                  <path d="M162 54C170 66 162 76 172 88"/>
+                  <path d="M186 66C180 80 196 88 188 102"/>
+                  <path d="M200 120C190 124 180 116 170 124"/>
+                  <path d="M96 146C110 138 122 148 138 140"/>
+                  <path d="M150 122C160 130 172 128 180 134"/>
+                </g>
+                <g stroke="#ff3700" stroke-width="2.5">
+                  <path class="syn-link" fill="none" d="M74 96L104 72L146 70L180 98M104 72L122 104L146 70M122 104L152 128L180 98M74 96L94 126L122 104M94 126L152 128"/>
+                  <g fill="#ff3700" stroke="#fff">
+                    <circle class="syn-node" cx="74" cy="96" r="5"/>
+                    <circle class="syn-node" style="--d:-.35s" cx="104" cy="72" r="5"/>
+                    <circle class="syn-node" style="--d:-.7s" cx="146" cy="70" r="5"/>
+                    <circle class="syn-node" style="--d:-1.05s" cx="180" cy="98" r="5"/>
+                    <circle class="syn-node" style="--d:-1.4s" cx="122" cy="104" r="6"/>
+                    <circle class="syn-node" style="--d:-1.75s" cx="152" cy="128" r="5"/>
+                    <circle class="syn-node" style="--d:-2.1s" cx="94" cy="126" r="5"/>
+                  </g>
+                </g>
+              </g>
+              <g stroke="#000" stroke-width="2.5" stroke-linejoin="round" fill="#fff">
+                <g transform="translate(212 40)"><path class="spark" style="--d:-1.5s" d="M0-12C2-2 2-2 12 0C2 2 2 2 0 12C-2 2-2 2-12 0C-2-2-2-2 0-12Z"/></g>
+                <g transform="translate(28 52)"><path class="spark" style="--d:-.4s" d="M0-9C1.5-1.5 1.5-1.5 9 0C1.5 1.5 1.5 1.5 0 9C-1.5 1.5-1.5 1.5-9 0C-1.5-1.5-1.5-1.5 0-9Z"/></g>
+                <g transform="translate(226 136)"><path class="spark" style="--d:-2.4s" d="M0-7C1-1 1-1 7 0C1 1 1 1 0 7C-1 1-1 1-7 0C-1-1-1-1 0-7Z"/></g>
+              </g>
+            </svg>
+          </span>
+          <span class="exp-label">
+            <span class="exp-num">02</span>
+            <span class="h3">Mente</span>
+            <span class="body">Saúde mental e emocional</span>
+            <span class="exp-more"><span><span class="body">Cuidar da mente é cuidar de como você dorme, aprende, se relaciona e até de como o corpo se sente. Explore e teste o que você sabe.</span></span></span>
+            <span class="exp-go"><span class="exp-go-txt">Explorar</span><i class="ph ph-arrow-right"></i></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- painéis com abas: montados pelo script a partir de EXP_DATA -->
+      <div class="exp-panels"></div>
+    </div>
+
+    <p class="meta exp-note" data-reveal>Conteúdo educativo: não substitui a avaliação de um profissional.</p>
+  </div>
+</section>
+
+<!-- =================================================================
+     DÚVIDAS (FAQ)
+     ================================================================= -->
+<section class="section" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Dúvidas!</em></div>
+      <h2 class="h2">Perguntas <span class="tone">frequentes.</span></h2>
+    </div>
+
+    <div class="faq-grid">
+      <aside class="faq-card glass" data-reveal>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <h3 class="h3">Ainda com dúvidas?</h3>
+          <p class="body">Nossa equipe de atendimento responde rapidinho — de segunda a sábado.</p>
+        </div>
+        <div class="btns">
+          <span class="ring" style="background:rgba(255,255,255,.5)">
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary">Falar no WhatsApp
+              <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+            </a>
+          </span>
+          <a href="mailto:contato@leface.com.br" class="link">contato@leface.com.br</a>
+        </div>
+      </aside>
+
+      <div class="faq-list" id="faq" data-reveal style="--d:.1s">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true">Vocês aceitam convênios?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim! Atendemos os principais convênios odontológicos e de saúde, além de atendimento particular com condições facilitadas. Fale com a gente para confirmar o seu plano.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Como faço para agendar uma consulta?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Pelo WhatsApp, telefone ou pelo botão “Agendar” aqui no site. Em poucos minutos confirmamos o melhor horário para você.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">O que é a avaliação integrada?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">É uma primeira consulta em que olhamos para você por inteiro: saúde bucal, saúde emocional, hábitos e bem-estar. A partir dela, os especialistas montam juntos o seu plano.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">A psicologia tem atendimento online?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim. As sessões de psicoterapia podem ser presenciais ou online, com a mesma qualidade e total sigilo.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Vocês atendem crianças?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Atendemos todas as idades. Temos odontopediatria, psicologia infantil e um ambiente preparado para deixar os pequenos à vontade.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Quais as formas de pagamento?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Pix e cartões de débito e crédito, com parcelamento dos tratamentos.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Tem estacionamento?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim, contamos com estacionamento conveniado ao lado da clínica e fácil acesso por transporte público.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =================================================================
+     RODAPÉ / CONTATO
+     ================================================================= -->
+<div class="footer-outer">
+<footer class="footer" id="contato">
+  <div class="rays" aria-hidden="true" style="height:100%; inset:0;"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="footer-cta" data-reveal>
+      <div class="eyebrow on-dark"><em>Vamos começar?</em></div>
+      <h2 class="display">Seu próximo sorriso <span class="tone">começa aqui.</span></h2>
+      <p class="body">Agende sua avaliação integrada e descubra como é ser cuidado por inteiro.</p>
+      <span class="ring on-ink">
+        <!-- TROQUE o número de WhatsApp -->
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary">Agendar pelo WhatsApp
+          <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+        </a>
+      </span>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <a href="#topo" class="wordmark pill" aria-label="Le Face — topo">
+          <span class="logo-slot">
+            <!-- 🖼️ LOGO (rodapé): mesma imagem da navegação → imagens/logo.png -->
+            <img src="imagens/logo.png" alt="Le Face" onload="this.closest('.wordmark').classList.add('has-logo')" onerror="this.remove()">
+            <span class="logo-mark">Lf</span>
+          </span>
+          <span class="wordmark-text">Le Face</span>
+        </a>
+        <p style="color:rgba(255,255,255,.6); max-width:280px;">Clínica integrada de odontologia, psicologia e saúde. Cuidado por inteiro, do sorriso à mente.</p>
+      </div>
+      <div>
+        <h4>Endereço</h4>
+        <!-- TROQUE pelo endereço real -->
+        <p>Rua Exemplo, 123 — Sala 45<br>Bairro, Cidade — UF<br>CEP 00000-000</p>
+        <a href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="link" style="color:var(--accent)">Ver no mapa ↗</a>
+      </div>
+      <div>
+        <h4>Horários</h4>
+        <p>Seg. a sex. — 8h às 20h<br>Sábado — 8h às 13h<br>Psicologia online — horários flexíveis</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+550000000000">(00) 0000-0000</a></li>
+          <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000 · WhatsApp</a></li>
+          <li><a href="mailto:contato@leface.com.br">contato@leface.com.br</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="meta">© Le Face Clínica Integrada, <span id="year">2026</span> · Responsável técnico: Nome — CRO-UF 00000</span>
+      <a href="#topo" class="meta" style="display:flex; align-items:center; gap:6px;">Voltar ao topo <i class="ph ph-arrow-up"></i></a>
+    </div>
+    <div class="giant" aria-hidden="true">Le Face</div>
+  </div>
+</footer>
+</div>
+
+<!-- botão flutuante WhatsApp (TROQUE o número) -->
+<a class="fab" id="fab" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <i class="ph ph-whatsapp-logo"></i><span class="fab-tip">Agende pelo WhatsApp</span>
+</a>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+  /* ---------- título dividido por letra ---------- */
+  $$('[data-split]').forEach(el => {
+    let i = 0;
+    const walk = node => {
+      [...node.childNodes].forEach(n => {
+        if (n.nodeType === 3) {
+          if (!n.textContent.trim()) { n.textContent = n.textContent ? ' ' : ''; return; }
+          const frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.append(' '); return; }
+            const w = document.createElement('span'); w.className = 'word';
+            [...part].forEach(c => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c; s.style.setProperty('--i', i++); w.append(s); });
+            frag.append(w);
+          });
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1 && !n.classList.contains('media-pill')) walk(n);
+      });
+    };
+    const clone = el.cloneNode(true); clone.querySelectorAll('.media-pill').forEach(m => m.remove());
+    walk(el);
+    el.setAttribute('aria-label', clone.textContent.replace(/\s+/g, ' ').trim());
+  });
+
+  /* ---------- start ---------- */
+  const start = () => document.body.classList.add('loaded');
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(start);
+  setTimeout(start, 900); // garantia: inicia mesmo se as fontes demorarem
+
+  /* ---------- ticker no título ---------- */
+  const items = $$('#ticker .t-item');
+  let ti = 0;
+  if (items.length && !reduce) setInterval(() => {
+    const cur = items[ti]; ti = (ti + 1) % items.length; const nxt = items[ti];
+    cur.classList.remove('on'); cur.classList.add('out');
+    nxt.classList.remove('out'); nxt.classList.add('on');
+    setTimeout(() => { cur.style.transition = 'none'; cur.classList.remove('out'); cur.offsetHeight; cur.style.transition = ''; }, 750);
+  }, 2200);
+
+  /* ---------- duplicar trilhas para loops infinitos ---------- */
+  const dup = el => { if (el) el.innerHTML += el.innerHTML; };
+  dup($('#marquee'));
+  dup($('#testiRow'));
+  $$('.g-track').forEach(dup);
+  // imagens duplicadas: re-aplica fallback (onerror inline já é copiado)
+
+  /* ---------- revelação no scroll ---------- */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); if (e.target.dataset.count !== undefined) countUp(e.target); } });
+  }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+  $$('[data-reveal], .step-arrow').forEach(el => io.observe(el));
+
+  /* ---------- contadores ---------- */
+  const countUp = el => {
+    const end = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), dur = 1600, t0 = performance.now();
+    const fmt = v => v.toFixed(dec).replace('.', ',');
+    if (reduce) { el.textContent = fmt(end); return; }
+    const tick = t => { const p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4); el.textContent = fmt(end * e); if (p < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  };
+  $$('[data-count]').forEach(el => io.observe(el));
+
+  /* ---------- revelação de palavras no scroll (0.2 → 1) ---------- */
+  const rw = $('#revealWords');
+  let words = [];
+  if (rw) {
+    rw.innerHTML = rw.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
+    words = $$('.w', rw);
+  }
+  /* ---------- nav: link ativo ---------- */
+  const links = $$('.nav-links a');
+  const secs = links.map(a => $(a.getAttribute('href')));
+  const fab = $('#fab');
+
+  const onScroll = () => {
+    const vh = innerHeight;
+    if (rw && !reduce) {
+      const r = rw.getBoundingClientRect();
+      const p = Math.min(Math.max((vh * .85 - r.top) / (r.height + vh * .3), 0), 1);
+      const n = words.length;
+      words.forEach((w, i) => { w.style.opacity = .2 + .8 * Math.min(Math.max(p * n * 1.15 - i, 0), 1); });
+    }
+    let active = -1;
+    secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top < vh * .45) active = i; });
+    links.forEach((a, i) => a.classList.toggle('is-active', i === active && secs[i].getBoundingClientRect().bottom > vh * .3));
+    fab.classList.toggle('show', scrollY > vh * .7);
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---------- menu ---------- */
+  const nav = $('#nav'), mb = $('#menuBtn');
+  const setMenu = open => { nav.classList.toggle('menu-open', open); mb.setAttribute('aria-expanded', open); mb.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); };
+  mb.addEventListener('click', e => { e.stopPropagation(); setMenu(!nav.classList.contains('menu-open')); });
+  $$('#menuPanel a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('click', e => { if (!e.target.closest('#menuPanel')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+  /* ---------- FAQ ---------- */
+  $$('.faq-q').forEach(q => q.addEventListener('click', () => {
+    const item = q.parentElement, open = !item.classList.contains('open');
+    $$('.faq-item.open').forEach(o => { o.classList.remove('open'); $('.faq-q', o).setAttribute('aria-expanded', 'false'); });
+    if (open) { item.classList.add('open'); q.setAttribute('aria-expanded', 'true'); }
+  }));
+
+  /* ---------- EXPLORE: sorriso & mente ----------
+     ✏️ CONTEÚDO: edite os textos abaixo. Cada tema tem 5 cards de importância
+     (ícone Phosphor, título, texto e dica prática) e 5 afirmações de mito ou verdade
+     (resposta: 'mito' ou 'verdade'). O quiz usa as mesmas afirmações. */
+  const EXP_DATA = {
+    sorriso: {
+      nome: 'Sorriso', sub: 'Cuidado com os dentes', artigo: 'o sorriso', icon: 'ph-tooth', chip: '#ffe1d6',
+      importancia: [
+        { icon: 'ph-shield-check', titulo: 'Prevenção de cáries e gengivite',
+          texto: 'A placa bacteriana que se acumula nos dentes é a principal causa de cáries e de inflamação na gengiva. Escovação e fio dental diários são a melhor defesa.',
+          dica: 'Escove pelo menos 2 vezes ao dia, por 2 minutos, com creme dental com flúor. Passe fio dental uma vez por dia, de preferência antes de dormir.' },
+        { icon: 'ph-heartbeat', titulo: 'Saúde do coração',
+          texto: 'Estudos associam a periodontite (inflamação crônica da gengiva) a um maior risco de doenças cardiovasculares. Cuidar da gengiva também é cuidar do corpo.',
+          dica: 'Gengiva que sangra ao escovar não é normal: é sinal de gengivite. Tratada cedo, ela é reversível. Vale agendar uma avaliação.' },
+        { icon: 'ph-fork-knife', titulo: 'Digestão e alimentação',
+          texto: 'A digestão começa na boca: a mastigação tritura os alimentos e a saliva inicia sua quebra. Dentes doloridos ou ausentes atrapalham o que você come.',
+          dica: 'Dor ao mastigar ou sensibilidade ao frio e ao doce merecem atenção. Quanto antes avaliadas, mais simples costumam ser as soluções.' },
+        { icon: 'ph-smiley', titulo: 'Autoestima e confiança',
+          texto: 'Um sorriso saudável muda a forma como você fala, sorri em fotos e se relaciona. Sentir-se bem com a própria boca faz diferença no dia a dia.',
+          dica: 'Estética vem depois da saúde: primeiro cuidamos de cáries e gengiva. Depois, se você quiser, clareamento, lentes ou alinhadores.' },
+        { icon: 'ph-wind', titulo: 'Hálito e bem-estar',
+          texto: 'Na maioria dos casos, o mau hálito começa na própria boca, principalmente pela saburra (camada esbranquiçada) na língua e por problemas na gengiva.',
+          dica: 'Inclua a limpeza da língua na rotina, de trás para a frente, e beba água ao longo do dia: boca seca favorece o mau hálito.' }
+      ],
+      mitos: [
+        { frase: 'Escovar com mais força deixa os dentes mais limpos.', resposta: 'mito',
+          explicacao: 'Força demais desgasta o esmalte e machuca a gengiva, podendo causar retração e sensibilidade. O ideal é escova de cerdas macias e movimentos suaves.' },
+        { frase: 'Sangrar um pouco ao escovar os dentes é normal.', resposta: 'mito',
+          explicacao: 'Gengiva saudável não sangra. O sangramento costuma indicar gengivite, que é reversível com boa higiene e acompanhamento profissional.' },
+        { frase: 'Dentes de leite precisam de tanto cuidado quanto os permanentes.', resposta: 'verdade',
+          explicacao: 'Eles ajudam a criança a mastigar e a falar e guardam espaço para os permanentes. Cárie no dente de leite dói e pode prejudicar o dente que vem depois.' },
+        { frase: 'O flúor do creme dental ajuda a prevenir cáries.', resposta: 'verdade',
+          explicacao: 'O flúor fortalece o esmalte e ajuda a reverter cáries bem no início. Para crianças, a quantidade importa: um grão de arroz até os 3 anos e uma ervilha depois disso.' },
+        { frase: 'Quem está grávida não pode ir ao dentista.', resposta: 'mito',
+          explicacao: 'O pré-natal odontológico é recomendado. Consultas, limpezas e muitos tratamentos são seguros na gestação, e cuidar da gengiva nesse período é ainda mais importante.' }
+      ]
+    },
+    mente: {
+      nome: 'Mente', sub: 'Saúde mental e emocional', artigo: 'a mente', icon: 'ph-brain', chip: '#e7e0ff',
+      importancia: [
+        { icon: 'ph-waves', titulo: 'Regulação das emoções',
+          texto: 'Reconhecer e nomear o que sentimos ajuda a atravessar ansiedade, raiva e tristeza sem ser dominado por elas, em qualquer idade.',
+          dica: 'Experimente dar nome ao que sente (“estou ansioso”, “estou frustrado”). Nomear a emoção ajuda a diminuir sua intensidade e a escolher o próximo passo.' },
+        { icon: 'ph-moon-stars', titulo: 'Sono de qualidade',
+          texto: 'Sono e saúde mental andam juntos: dormir mal aumenta a irritabilidade e a ansiedade, e a ansiedade, por sua vez, atrapalha o sono.',
+          dica: 'Mantenha horários regulares e deixe as telas de lado cerca de 1 hora antes de dormir. Para crianças, uma rotina previsível (banho, história, luz baixa) ajuda muito.' },
+        { icon: 'ph-users-three', titulo: 'Relacionamentos',
+          texto: 'Cuidar da mente melhora a forma como nos comunicamos, colocamos limites e resolvemos conflitos: em casa, na escola e no trabalho.',
+          dica: 'Reserve alguns minutos por dia de atenção exclusiva, sem celular, para quem você ama. Para as crianças, esse tempo fortalece o vínculo e a segurança.' },
+        { icon: 'ph-target', titulo: 'Desempenho e foco',
+          texto: 'Estresse e ansiedade constantes prejudicam atenção, memória e aprendizagem. Uma mente cuidada aprende melhor e rende mais na escola e no trabalho.',
+          dica: 'Trabalhe em blocos de foco com pausas curtas entre eles. Levantar e se movimentar por alguns minutos ajuda a recuperar a atenção.' },
+        { icon: 'ph-person-simple-run', titulo: 'Saúde física',
+          texto: 'Corpo e mente estão conectados: o estresse crônico pode afetar sono, imunidade e pressão arterial, e até a boca, no hábito de apertar ou ranger os dentes.',
+          dica: 'Movimente-se de um jeito que você goste: a atividade física regular é uma das ferramentas mais eficazes para reduzir sintomas de ansiedade e depressão.' }
+      ],
+      mitos: [
+        { frase: 'Psicólogo é só para quem tem um problema grave.', resposta: 'mito',
+          explicacao: 'A terapia ajuda em fases difíceis, decisões, luto, relacionamentos e autoconhecimento. Buscar ajuda cedo também é uma forma de prevenção.' },
+        { frase: 'Crianças também podem ter ansiedade.', resposta: 'verdade',
+          explicacao: 'A ansiedade está entre as questões de saúde mental mais comuns na infância. Dores de barriga frequentes, medos intensos e dificuldade para dormir podem ser sinais.' },
+        { frase: 'Falar sobre sentimentos com as crianças pode deixá-las mais frágeis.', resposta: 'mito',
+          explicacao: 'Nomear e acolher emoções ajuda a criança a entender o que sente e a desenvolver formas mais saudáveis de lidar com elas. Isso fortalece, não fragiliza.' },
+        { frase: 'Dormir mal pode piorar a ansiedade.', resposta: 'verdade',
+          explicacao: 'A falta de sono deixa o cérebro mais reativo ao estresse e intensifica sintomas de ansiedade. Cuidar do sono é parte do cuidado com a saúde mental.' },
+        { frase: 'Terapia online pode funcionar tão bem quanto a presencial.', resposta: 'verdade',
+          explicacao: 'Para muitas demandas, como ansiedade e depressão, estudos mostram resultados semelhantes aos do atendimento presencial. O que mais pesa é o vínculo com o profissional.' }
+      ]
+    }
+  };
+
+  const exp = $('#exp');
+  if (exp) {
+    const TOTAL = 10; // 5 cards de importância + 5 de mito ou verdade, por tema
+    const CHIPS = ['#ffe1d6', '#e7e0ff', '#fff1c7', '#dcf3d6', '#d9ecff'];
+    const TABS = [
+      { id: 'imp', label: 'Importância', short: 'Importância', icon: 'ph-sparkle' },
+      { id: 'mv', label: 'Mito ou Verdade', short: 'Mito/Verdade', icon: 'ph-cards' },
+      { id: 'quiz', label: 'Quiz rápido', short: 'Quiz', icon: 'ph-question' }
+    ];
+    const ARROW = '<span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>';
+    const ARROW_R = '<span class="ico"><i class="ph ph-arrow-right"></i><i class="ph ph-arrow-right"></i></span>';
+    const label = a => a === 'mito' ? 'Mito' : 'Verdade';
+    const pad = n => String(n).padStart(2, '0');
+    const smooth = reduce ? 'auto' : 'smooth';
+    const stage = $('.exp-stage', exp), items = $$('.exp-item', exp), host = $('.exp-panels', exp);
+    const panels = {}, state = {};
+
+    const impCard = (c, i) => `
+      <button type="button" class="imp-card card exp-in" aria-expanded="false" data-k="imp-${i}" style="--i:${i}; --chip:${CHIPS[i % CHIPS.length]}">
+        <span class="imp-top"><span class="imp-ico"><i class="ph ${c.icon}"></i><i class="ph-fill ph-check-circle imp-check" aria-hidden="true"></i></span><span class="plus" aria-hidden="true"></span></span>
+        <span class="title">${c.titulo}</span>
+        <span class="body">${c.texto}</span>
+        <span class="imp-more" aria-hidden="true"><span><span class="imp-tip"><i class="ph ph-lightbulb"></i><span><b>Dica prática</b>${c.dica}</span></span></span></span>
+      </button>`;
+
+    const mvCard = (m, i) => `
+      <button type="button" class="mv-card exp-in" aria-pressed="false" data-k="mv-${i}" style="--i:${i}">
+        <span class="mv-inner">
+          <span class="mv-face mv-front card">
+            <span class="mv-q"><b aria-hidden="true">?</b><span class="meta">Mito ou verdade · ${pad(i + 1)}</span></span>
+            <span class="title">${m.frase}</span>
+            <span class="meta mv-hint"><i class="ph ph-hand-tap"></i>Toque para revelar</span>
+          </span>
+          <span class="mv-face mv-back card is-${m.resposta}" aria-hidden="true">
+            <span class="mv-badge"><i class="ph-fill ${m.resposta === 'mito' ? 'ph-x-circle' : 'ph-check-circle'}"></i>${label(m.resposta)}</span>
+            <span class="body">${m.explicacao}</span>
+            <span class="meta mv-hint"><i class="ph ph-arrow-counter-clockwise"></i>Toque para voltar</span>
+          </span>
+        </span>
+      </button>`;
+
+    const buildPanel = (key, d) => {
+      const p = document.createElement('div');
+      p.className = 'exp-panel glass';
+      p.id = `exp-${key}`;
+      p.hidden = true;
+      p.setAttribute('role', 'region');
+      p.setAttribute('aria-label', `${d.nome}: explorar`);
+      p.style.setProperty('--chip', d.chip);
+      p.innerHTML = `
+        <div class="exp-head">
+          <button type="button" class="btn btn-secondary btn-sm exp-back"><i class="ph ph-arrow-left"></i>Voltar</button>
+          <div class="exp-theme"><span class="exp-theme-ico"><i class="ph ${d.icon}"></i></span><div><h3 class="h3">${d.nome}</h3><p class="meta">${d.sub}</p></div></div>
+          <div class="exp-progress">
+            <div class="exp-progress-txt meta"><span><b class="exp-count">0</b> de ${TOTAL} cards explorados</span><span class="exp-pct">0%</span></div>
+            <div class="exp-bar" role="progressbar" aria-label="Cards explorados sobre ${d.artigo}" aria-valuemin="0" aria-valuemax="${TOTAL}" aria-valuenow="0"><i></i></div>
+          </div>
+        </div>
+        <div class="exp-complete card">
+          <span class="c-ico"><i class="ph ph-confetti"></i></span>
+          <p class="body"><b>Tema completo!</b> Você explorou todos os cards sobre ${d.artigo}. Que tal transformar isso em cuidado de verdade?</p>
+          <a href="#contato" class="btn btn-primary btn-sm">Agendar avaliação ${ARROW}</a>
+        </div>
+        <div class="exp-tabs-wrap">
+          <div class="exp-tabs" role="tablist" aria-label="Conteúdo sobre ${d.artigo}">
+            <span class="exp-tab-ind" aria-hidden="true"></span>
+            ${TABS.map((t, i) => `<button type="button" class="exp-tab" role="tab" id="exp-${key}-t-${t.id}" aria-controls="exp-${key}-p-${t.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"><i class="ph ${t.icon}"></i><span class="t-full">${t.label}</span><span class="t-short" aria-hidden="true">${t.short}</span></button>`).join('')}
+          </div>
+        </div>
+        <div class="exp-views">
+          <div class="exp-pane" role="tabpanel" id="exp-${key}-p-imp" aria-labelledby="exp-${key}-t-imp">
+            <div class="imp-grid">${d.importancia.map(impCard).join('')}</div>
+          </div>
+          <div class="exp-pane" role="tabpanel" id="exp-${key}-p-mv" aria-labelledby="exp-${key}-t-mv" hidden>
+            <p class="meta mv-intro"><span><i class="ph ph-hand-tap"></i> Toque nos cards para descobrir a resposta.</span><button type="button" class="link exp-goquiz">Prefere testar antes? Faça o quiz →</button></p>
+            <div class="mv-grid">${d.mitos.map(mvCard).join('')}</div>
+          </div>
+          <div class="exp-pane" role="tabpanel" id="exp-${key}-p-quiz" aria-labelledby="exp-${key}-t-quiz" hidden>
+            <div class="quiz card exp-in">
+              <div class="quiz-play">
+                <div class="quiz-top">
+                  <span class="meta">Pergunta <b class="quiz-n">1</b> de ${d.mitos.length}</span>
+                  <span class="pill quiz-score"><i class="ph-fill ph-star"></i><span><b class="quiz-pts">0</b> <span class="quiz-pl">acertos</span></span></span>
+                </div>
+                <div class="quiz-dots" aria-hidden="true">${d.mitos.map(() => '<i></i>').join('')}</div>
+                <p class="h3 quiz-q"></p>
+                <div class="quiz-opts">
+                  <button type="button" class="btn btn-secondary quiz-opt" data-a="mito"><i class="ph ph-x-circle"></i>Mito</button>
+                  <button type="button" class="btn btn-secondary quiz-opt" data-a="verdade"><i class="ph ph-check-circle"></i>Verdade</button>
+                </div>
+                <div class="quiz-fb" aria-live="polite"><div><div class="quiz-fb-in">
+                  <p class="title quiz-res"></p>
+                  <p class="body quiz-exp"></p>
+                  <button type="button" class="btn btn-primary quiz-next"><span class="quiz-next-txt">Próxima pergunta</span>${ARROW_R}</button>
+                </div></div></div>
+              </div>
+              <div class="quiz-end" hidden>
+                <div class="eyebrow"><em>Resultado!</em></div>
+                <span class="numeral"><span class="quiz-final">0</span><sup>/${d.mitos.length}</sup></span>
+                <p class="title quiz-msg"></p>
+                <div class="quiz-end-btns">
+                  <button type="button" class="btn btn-secondary quiz-again"><i class="ph ph-arrow-counter-clockwise"></i>Jogar de novo</button>
+                  <a href="#contato" class="btn btn-primary">Agendar avaliação ${ARROW}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      return p;
+    };
+
+    /* indicador preto das abas */
+    const moveInd = (p, instant) => {
+      const ind = $('.exp-tab-ind', p), t = $('.exp-tab[aria-selected="true"]', p);
+      if (!ind || !t || !t.offsetWidth) return;
+      if (instant) ind.style.transition = 'none';
+      ind.style.width = t.offsetWidth + 'px';
+      ind.style.transform = `translateX(${t.offsetLeft}px)`;
+      if (instant) { ind.offsetWidth; ind.style.transition = ''; }
+    };
+
+    /* troca de aba com altura animada */
+    const selectTab = (p, idx, focus) => {
+      const tabs = $$('.exp-tab', p), panes = $$('.exp-pane', p), views = $('.exp-views', p);
+      const cur = panes.findIndex(x => !x.hidden);
+      tabs.forEach((t, i) => { t.setAttribute('aria-selected', i === idx); t.tabIndex = i === idx ? 0 : -1; });
+      moveInd(p);
+      if (focus) tabs[idx].focus({ preventScroll: true });
+      if (cur === idx) return;
+      const h0 = views.offsetHeight;
+      panes[cur].hidden = true;
+      panes[idx].hidden = false;
+      panes[idx].classList.remove('is-entering'); panes[idx].offsetWidth; panes[idx].classList.add('is-entering');
+      const h1 = views.offsetHeight;
+      if (!reduce && h0 !== h1) {
+        views.style.overflow = 'hidden';
+        const a = views.animate([{ height: h0 + 'px' }, { height: h1 + 'px' }], { duration: 520, easing: 'cubic-bezier(.22,1,.36,1)' });
+        a.onfinish = a.oncancel = () => { views.style.overflow = ''; };
+      }
+      if (idx === 2 && !state[p.dataset.key].quiz) quizStart(p.dataset.key);
+    };
+
+    /* confete com as cores do site */
+    const confetti = src => {
+      if (reduce) return;
+      const r = src && src.getBoundingClientRect();
+      const x = r && r.bottom > 0 && r.top < innerHeight ? r.left + r.width / 2 : innerWidth / 2;
+      const y = r && r.bottom > 0 && r.top < innerHeight ? r.top + Math.min(r.height / 2, 120) : innerHeight * .4;
+      const layer = document.createElement('div');
+      layer.className = 'exp-confetti';
+      layer.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(layer);
+      const colors = ['#ff3700', '#0cb300', '#000', '#ffe1d6', '#e7e0ff', '#fff1c7', '#dcf3d6', '#d9ecff', '#ffdbe8'];
+      for (let i = 0; i < 120; i++) {
+        const c = document.createElement('i'), s = 6 + Math.random() * 8;
+        c.style.cssText = `left:${x}px; top:${y}px; width:${s}px; height:${Math.random() < .5 ? s : s * .45}px; background:${colors[i % colors.length]}; border-radius:${Math.random() < .35 ? '50%' : '2px'}`;
+        layer.appendChild(c);
+        const ang = (-160 + Math.random() * 140) * Math.PI / 180, v = 220 + Math.random() * 420;
+        const dx = Math.cos(ang) * v, dy = Math.sin(ang) * v, rot = (Math.random() - .5) * 1080;
+        c.animate([
+          { transform: 'translate(-50%,-50%) translate(0,0) rotate(0deg)', opacity: 1, easing: 'cubic-bezier(.2,.8,.4,1)' },
+          { transform: `translate(-50%,-50%) translate(${dx}px,${dy}px) rotate(${rot / 2}deg)`, opacity: 1, offset: .4, easing: 'cubic-bezier(.5,0,.9,.6)' },
+          { transform: `translate(-50%,-50%) translate(${dx * 1.35}px,${dy + 560}px) rotate(${rot}deg)`, opacity: 0 }
+        ], { duration: 1800 + Math.random() * 1000, fill: 'forwards' });
+      }
+      setTimeout(() => layer.remove(), 3200);
+    };
+
+    let toastEl, toastT;
+    const toast = key => {
+      const d = EXP_DATA[key];
+      if (!toastEl) {
+        toastEl = document.createElement('div');
+        toastEl.className = 'exp-toast pill';
+        toastEl.setAttribute('role', 'status');
+        document.body.appendChild(toastEl);
+        toastEl.addEventListener('click', e => { if (e.target.closest('.exp-toast-x')) toastEl.classList.remove('show'); });
+      }
+      toastEl.innerHTML = `<span class="c-ico"><i class="ph ph-confetti"></i></span><span><b>Tema completo!</b> Você explorou tudo sobre ${d.artigo}.</span><button type="button" class="exp-toast-x" aria-label="Fechar aviso"><i class="ph ph-x"></i></button>`;
+      requestAnimationFrame(() => toastEl.classList.add('show'));
+      clearTimeout(toastT);
+      toastT = setTimeout(() => toastEl.classList.remove('show'), 6500);
+    };
+
+    /* progresso: "3 de 10" */
+    const markSeen = (key, k, src) => {
+      const s = state[key];
+      if (s.seen.has(k)) return;
+      s.seen.add(k);
+      const p = panels[key], n = s.seen.size, bar = $('.exp-bar', p);
+      $('.exp-count', p).textContent = n;
+      $('.exp-pct', p).textContent = Math.round(n / TOTAL * 100) + '%';
+      $('i', bar).style.width = n / TOTAL * 100 + '%';
+      bar.setAttribute('aria-valuenow', n);
+      bar.classList.remove('bump'); bar.offsetWidth; bar.classList.add('bump');
+      if (n === TOTAL && !s.done) {
+        s.done = true;
+        setTimeout(() => {
+          p.classList.add('is-done');
+          items.find(it => it.dataset.theme === key).classList.add('is-done');
+          confetti(src);
+          toast(key);
+        }, reduce ? 0 : 450);
+      }
+    };
+
+    /* quiz */
+    const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+    const quizStart = key => {
+      const p = panels[key], d = EXP_DATA[key];
+      state[key].quiz = { order: shuffle(d.mitos.map((_, i) => i)), idx: 0, pts: 0, done: false };
+      $('.quiz-play', p).hidden = false;
+      $('.quiz-end', p).hidden = true;
+      $('.quiz-pts', p).textContent = 0;
+      $('.quiz-pl', p).textContent = 'acertos';
+      $$('.quiz-dots i', p).forEach(dt => dt.className = '');
+      quizShow(key);
+    };
+    const quizShow = key => {
+      const p = panels[key], q = state[key].quiz, m = EXP_DATA[key].mitos[q.order[q.idx]];
+      q.done = false;
+      $('.quiz-n', p).textContent = q.idx + 1;
+      const qq = $('.quiz-q', p);
+      qq.innerHTML = `<span><em>“</em>${m.frase}<em>”</em></span>`;
+      qq.classList.remove('swap'); qq.offsetWidth; qq.classList.add('swap');
+      $$('.quiz-opt', p).forEach(o => { o.disabled = false; o.classList.remove('right', 'wrong', 'fade'); });
+      $('.quiz-fb', p).classList.remove('show');
+      $$('.quiz-dots i', p).forEach((dt, i) => dt.classList.toggle('now', i === q.idx));
+    };
+    const quizAnswer = (key, btn) => {
+      const p = panels[key], q = state[key].quiz;
+      if (!q || q.done) return;
+      q.done = true;
+      const m = EXP_DATA[key].mitos[q.order[q.idx]], ok = btn.dataset.a === m.resposta;
+      if (ok) {
+        q.pts++;
+        const sc = $('.quiz-score', p);
+        $('.quiz-pts', p).textContent = q.pts;
+        $('.quiz-pl', p).textContent = q.pts === 1 ? 'acerto' : 'acertos';
+        sc.classList.remove('pop'); sc.offsetWidth; sc.classList.add('pop');
+      }
+      $$('.quiz-opt', p).forEach(o => {
+        o.disabled = true;
+        if (o.dataset.a === m.resposta) o.classList.add('right');
+        else if (o === btn) o.classList.add('wrong');
+        else o.classList.add('fade');
+      });
+      const dot = $$('.quiz-dots i', p)[q.idx];
+      dot.classList.remove('now'); dot.classList.add(ok ? 'ok' : 'no');
+      const res = $('.quiz-res', p);
+      res.className = 'title quiz-res ' + (ok ? 'ok' : 'no');
+      res.innerHTML = ok
+        ? `<i class="ph-fill ph-check-circle"></i>Acertou! É ${label(m.resposta).toLowerCase()}.`
+        : `<i class="ph-fill ph-x-circle"></i>Quase! A resposta certa é ${label(m.resposta).toLowerCase()}.`;
+      $('.quiz-exp', p).textContent = m.explicacao;
+      $('.quiz-next-txt', p).textContent = q.idx === q.order.length - 1 ? 'Ver resultado' : 'Próxima pergunta';
+      $('.quiz-fb', p).classList.add('show');
+      setTimeout(() => $('.quiz-next', p).focus({ preventScroll: true }), 300);
+    };
+    const quizNext = key => {
+      const p = panels[key], q = state[key].quiz, n = q.order.length;
+      q.idx++;
+      if (q.idx < n) { quizShow(key); $('.quiz-opt', p).focus({ preventScroll: true }); return; }
+      $('.quiz-play', p).hidden = true;
+      const end = $('.quiz-end', p);
+      end.hidden = false;
+      end.classList.remove('is-entering'); end.offsetWidth; end.classList.add('is-entering');
+      $('.quiz-final', p).textContent = q.pts;
+      $('.quiz-msg', p).textContent = q.pts === n ? 'Gabaritou! Você está craque no assunto.'
+        : q.pts >= n - 2 ? 'Muito bem! Você já sabe bastante e agora sabe ainda mais.'
+        : 'Valeu por testar! Agora você conhece as respostas certas.';
+      if (q.pts === n) confetti($('.quiz-final', p));
+      $('.quiz-again', p).focus({ preventScroll: true });
+    };
+
+    /* escolher um tema / voltar */
+    const isMobile = () => matchMedia('(max-width:809.98px)').matches;
+    const choose = key => {
+      const prev = exp.dataset.on, p = panels[key];
+      if (prev === key) { p.scrollIntoView({ behavior: smooth, block: 'start' }); return; }
+      exp.dataset.on = key;
+      exp.classList.add('has-choice');
+      items.forEach(it => {
+        const on = it.dataset.theme === key;
+        it.classList.toggle('is-on', on);
+        it.classList.toggle('is-dim', !on);
+        it.setAttribute('aria-expanded', on);
+        $('.exp-go-txt', it).textContent = on ? 'Explorando' : 'Trocar';
+        $('.exp-tip-txt', it).textContent = 'Clique para trocar';
+      });
+      Object.entries(panels).forEach(([k, o]) => { if (k !== key) { o.hidden = true; o.classList.remove('is-in', 'is-out'); } });
+      p.hidden = false;
+      p.classList.remove('is-in', 'is-out'); p.offsetWidth; p.classList.add('is-in');
+      moveInd(p, true);
+      setTimeout(() => {
+        const target = isMobile() ? p : stage;
+        scrollTo({ top: target.getBoundingClientRect().top + scrollY - (isMobile() ? 90 : 110), behavior: smooth });
+      }, isMobile() && !reduce ? 650 : 60);
+    };
+    const back = () => {
+      const key = exp.dataset.on;
+      if (!key) return;
+      const p = panels[key], it = items.find(x => x.dataset.theme === key);
+      p.classList.remove('is-in'); p.classList.add('is-out');
+      setTimeout(() => { if (exp.dataset.on !== key) { p.hidden = true; p.classList.remove('is-out'); } }, reduce ? 0 : 340);
+      delete exp.dataset.on;
+      exp.classList.remove('has-choice');
+      items.forEach(x => {
+        x.classList.remove('is-on', 'is-dim');
+        x.setAttribute('aria-expanded', 'false');
+        $('.exp-go-txt', x).textContent = 'Explorar';
+        $('.exp-tip-txt', x).textContent = 'Clique para explorar';
+      });
+      scrollTo({ top: $('#explore').getBoundingClientRect().top + scrollY - 20, behavior: smooth });
+      it.focus({ preventScroll: true });
+    };
+
+    /* monta os painéis e liga os eventos */
+    Object.entries(EXP_DATA).forEach(([key, d]) => {
+      state[key] = { seen: new Set(), done: false, quiz: null };
+      const p = buildPanel(key, d);
+      p.dataset.key = key;
+      panels[key] = p;
+      host.appendChild(p);
+      const tabs = $$('.exp-tab', p);
+      p.addEventListener('click', e => {
+        const t = e.target;
+        const imp = t.closest('.imp-card');
+        if (imp) {
+          const open = imp.getAttribute('aria-expanded') !== 'true';
+          imp.setAttribute('aria-expanded', open);
+          $('.imp-more', imp).setAttribute('aria-hidden', !open);
+          if (open) { imp.classList.add('seen'); markSeen(key, imp.dataset.k, imp); }
+          return;
+        }
+        const mv = t.closest('.mv-card');
+        if (mv) {
+          const f = !mv.classList.contains('flipped');
+          mv.classList.toggle('flipped', f);
+          mv.setAttribute('aria-pressed', f);
+          $('.mv-front', mv).setAttribute('aria-hidden', f);
+          $('.mv-back', mv).setAttribute('aria-hidden', !f);
+          if (f) markSeen(key, mv.dataset.k, mv);
+          return;
+        }
+        const tab = t.closest('.exp-tab');
+        if (tab) { selectTab(p, tabs.indexOf(tab)); return; }
+        if (t.closest('.exp-back')) { back(); return; }
+        if (t.closest('.exp-goquiz')) { selectTab(p, 2, true); return; }
+        const opt = t.closest('.quiz-opt');
+        if (opt) { quizAnswer(key, opt); return; }
+        if (t.closest('.quiz-next')) { quizNext(key); return; }
+        if (t.closest('.quiz-again')) { quizStart(key); $('.quiz-opt', p).focus({ preventScroll: true }); }
+      });
+      /* teclado nas abas: setas, Home e End */
+      $('.exp-tabs', p).addEventListener('keydown', e => {
+        const i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        const n = { ArrowRight: (i + 1) % tabs.length, ArrowLeft: (i - 1 + tabs.length) % tabs.length, Home: 0, End: tabs.length - 1 }[e.key];
+        if (n === undefined) return;
+        e.preventDefault();
+        selectTab(p, n, true);
+      });
+    });
+    items.forEach(it => it.addEventListener('click', () => choose(it.dataset.theme)));
+    exp.addEventListener('keydown', e => { if (e.key === 'Escape' && exp.dataset.on) back(); });
+    addEventListener('resize', () => { if (exp.dataset.on) moveInd(panels[exp.dataset.on], true); });
+  }
+
+  /* ---------- cursor da galeria ---------- */
+  const gal = $('#gallery'), badge = $('#cursorBadge');
+  if (gal && matchMedia('(hover:hover)').matches) {
+    gal.addEventListener('mousemove', e => { badge.style.left = e.clientX + 'px'; badge.style.top = e.clientY + 'px'; badge.classList.add('show'); });
+    gal.addEventListener('mouseleave', () => badge.classList.remove('show'));
+  }
+
+  /* ---------- chips do hero: parallax com o mouse ---------- */
+  const chips = $$('.float-chip');
+  if (chips.length && !reduce && matchMedia('(hover:hover)').matches) {
+    addEventListener('mousemove', e => {
+      if (scrollY > innerHeight) return;
+      const x = (e.clientX / innerWidth - .5), y = (e.clientY / innerHeight - .5);
+      chips.forEach((c, i) => { const k = (i % 2 ? -1 : 1) * (14 + i * 6); c.style.translate = `${x * k}px ${y * k}px`; });
+    });
+  }
+
+  /* ---------- ano ---------- */
+  $('#year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
