@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Le Face — Clínica Integrada de Saúde</title>
+<meta name="description" content="Le Face: odontologia e psicologia com atendimento humanizado, em um só lugar. Cuidado por inteiro, do sorriso à mente.">
+<meta name="theme-color" content="#d9d9d9">
+<!-- Guia de edição (fotos, textos, WhatsApp e publicação): veja o README.md -->
+
+<!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Le Face">
+<meta property="og:title" content="Le Face — Clínica Integrada de Saúde">
+<meta property="og:description" content="Odontologia e psicologia com atendimento humanizado, em um só lugar. Cuidado por inteiro, do sorriso à mente.">
+<meta name="twitter:card" content="summary_large_image">
+<!-- ⚙️ DEPOIS DE PUBLICAR: troque SEU-DOMINIO pelo endereço do site e tire as 3 linhas abaixo do comentário.
+<link rel="canonical" href="https://SEU-DOMINIO/">
+<meta property="og:url" content="https://SEU-DOMINIO/">
+<meta property="og:image" content="https://SEU-DOMINIO/assets/img/og-image.jpg">
+-->
+
+<!-- 🖼️ Ícones da aba e da tela inicial do celular -->
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Phosphor Icons (regular) — mesmo set de ícones do design system -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+<!-- Estilos do site -->
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<!-- camadas de fundo -->
+<div class="page-field" aria-hidden="true"><div class="rays"><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- =================================================================
+     NAVEGAÇÃO
+     ================================================================= -->
+<header class="nav" id="nav">
+  <a href="#topo" class="wordmark pill" aria-label="Le Face — início">
+    <span class="logo-slot">
+      <!-- 🖼️ LOGO: logo em assets/img/logo.png (fundo transparente).
+           Quando a logo carrega, o monograma "LF" e o texto ao lado somem automaticamente. -->
+      <img src="assets/img/logo.png" alt="Le Face" onload="this.closest('.wordmark').classList.add('has-logo')" onerror="this.remove()">
+      <span class="logo-mark">Lf</span>
+    </span>
+    <span class="wordmark-text">Le Face</span>
+  </a>
+
+  <nav class="nav-links" aria-label="Seções">
+    <a href="#especialidades">Especialidades</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#explore">Explore</a>
+    <a href="#duvidas">Dúvidas</a>
+  </nav>
+
+  <div class="nav-right">
+    <a href="#contato" class="btn btn-primary btn-sm">Agendar
+      <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel"><span></span><span></span></button>
+  </div>
+
+  <div class="menu-panel card" id="menuPanel">
+    <nav aria-label="Menu">
+      <a href="#especialidades">Especialidades <i class="ph ph-arrow-right"></i></a>
+      <a href="#sobre">Sobre nós <i class="ph ph-arrow-right"></i></a>
+      <a href="#como-funciona">Como funciona <i class="ph ph-arrow-right"></i></a>
+      <a href="#equipe">Equipe <i class="ph ph-arrow-right"></i></a>
+      <a href="#espaco">Nosso espaço <i class="ph ph-arrow-right"></i></a>
+      <a href="#explore">Explore <i class="ph ph-arrow-right"></i></a>
+      <a href="#duvidas">Dúvidas <i class="ph ph-arrow-right"></i></a>
+      <a href="#contato">Contato <i class="ph ph-arrow-right"></i></a>
+    </nav>
+    <!-- TROQUE o número de WhatsApp (formato 55 + DDD + número) -->
+    <a class="get" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp <i class="ph ph-arrow-up-right"></i></a>
+    <div class="socials">
+      <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+      <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+      <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+      <a href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" aria-label="Google Maps"><i class="ph ph-map-pin"></i></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- =================================================================
+     HERO
+     ================================================================= -->
+<section class="hero" id="topo">
+  <div class="chip-wrap" aria-hidden="true">
+    <div style="--d:1.5s; position:absolute; left:6%; top:24%;"><div class="float-chip pill" style="--rot:-8deg; --chip:#ffe1d6;"><span class="chip-ico"><i class="ph ph-tooth"></i></span>Odontologia</div></div>
+    <div style="--d:1.65s; position:absolute; right:7%; top:21%;"><div class="float-chip pill" style="--rot:7deg; --chip:#e7e0ff; --bd:-2s;"><span class="chip-ico"><i class="ph ph-brain"></i></span>Psicologia</div></div>
+    <div style="--d:1.8s; position:absolute; left:9%; bottom:20%;"><div class="float-chip pill" style="--rot:5deg; --chip:#fff1c7; --bd:-4s;"><span class="chip-ico"><i class="ph ph-hand-heart"></i></span>Atendimento humanizado</div></div>
+    <div style="--d:1.95s; position:absolute; right:8%; bottom:23%;"><div class="float-chip pill" style="--rot:-6deg; --chip:#dcf3d6; --bd:-1s;"><span class="chip-ico"><i class="ph ph-heartbeat"></i></span>Saúde</div></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="status pill" data-appear style="--d:.2s">
+      <span class="dot"></span> Agenda aberta — <b>novembro e dezembro</b>
+    </div>
+
+    <h1 class="display" data-split>
+      <span class="line">Cuidado
+        <!-- 🖼️ LOGO (hero): rosto + moldura dourada da marca → assets/img/logo-face.png -->
+        <span class="media-pill gem" aria-hidden="true">
+          <span class="gem-in"><img src="assets/img/logo-face.png" alt=""><i class="gem-shine"></i></span>
+        </span>
+        por inteiro,</span>
+      <span class="line">do sorriso
+        <span class="media-pill ticker" id="ticker" aria-hidden="true">
+          <span class="t-item on"><span class="t-ico"><i class="ph ph-tooth"></i></span>Odontologia</span>
+          <span class="t-item"><span class="t-ico"><i class="ph ph-brain"></i></span>Psicologia</span>
+        </span>
+        <span class="tone">à mente.</span></span>
+    </h1>
+
+    <p class="body hero-sub" data-appear style="--d:1.1s">
+      Na Le Face, dentistas, psicólogos e especialistas em saúde trabalham juntos para cuidar de você — em um só lugar, com tempo, escuta e tecnologia.
+    </p>
+
+    <div class="hero-ctas" data-appear style="--d:1.25s">
+      <span class="ring">
+        <a href="#contato" class="btn btn-primary">Agendar avaliação
+          <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+        </a>
+      </span>
+      <a href="#especialidades" class="btn btn-secondary">Conhecer especialidades</a>
+    </div>
+
+    <!-- 📍 Link do Google Maps (mesmo link usado no menu e no rodapé) -->
+    <a class="visit pill" href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" data-appear style="--d:1.4s">
+      <span class="v-ico"><i class="ph-fill ph-map-pin"></i></span>
+      <span class="v-txt"><b>Venha nos conhecer!</b><span class="meta">Ver no Google Maps</span></span>
+      <span class="v-arrow"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+    </a>
+  </div>
+</section>
+
+<!-- faixa inclinada com marquee -->
+<div class="band-wrap" aria-hidden="true">
+  <div class="band">
+    <div class="marquee" id="marquee">
+      <span>Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i> Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i> Humanizada <i class="ast">✱</i> <em>Psicologia</em> <i class="ast">✱</i> Odontologia <i class="ast">✱</i></span>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================
+     SOBRE
+     ================================================================= -->
+<section class="section" id="sobre">
+  <div class="light-sweep" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="intro-grid">
+      <div style="display:flex; flex-direction:column; gap:32px;">
+        <div class="eyebrow left" data-reveal><em>Sobre a Le Face!</em></div>
+        <p class="lead reveal-words" id="revealWords">
+          Acreditamos que saúde não se divide em partes. Por isso reunimos odontologia e psicologia em um só endereço, com atendimento humanizado — profissionais que escutam, conversam entre si e montam um plano pensado para a sua história.
+        </p>
+        <div data-reveal><a href="#equipe" class="btn btn-secondary">Conheça a equipe</a></div>
+      </div>
+
+      <div class="intro-photo" data-reveal="tilt" style="--r-from:12deg">
+        <div class="card">
+          <!-- 📷 FOTO: Dr. Guilherme Sudati, fundador → assets/img/sobre/guilherme-sudati.jpg (vertical 2:3) -->
+          <div class="photo" data-label="sobre/guilherme-sudati.jpg"><img src="assets/img/sobre/guilherme-sudati.jpg" alt="Dr. Guilherme Sudati, cirurgião-dentista e fundador da Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div>
+        <div class="badge card">
+          <span class="b-ico"><i class="ph ph-tooth"></i></span>
+          <div><b>Dr. Guilherme Sudati</b><span class="meta">Fundador da Le Face</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat card" data-reveal style="--d:0s"><span class="numeral"><span data-count="12">0</span><sup>+</sup></span><span class="body">anos cuidando de famílias</span></div>
+      <div class="stat card" data-reveal style="--d:.1s"><span class="numeral"><span data-count="18">0</span></span><span class="body">especialistas integrados</span></div>
+      <div class="stat card" data-reveal style="--d:.2s"><span class="numeral"><span data-count="4.9" data-dec="1">0</span><sup>★</sup></span><span class="body">nota média no Google</span></div>
+      <div class="stat card" data-reveal style="--d:.3s"><span class="numeral"><span data-count="3.2" data-dec="1">0</span>k</span><span class="body">pacientes atendidos</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     ESPECIALIDADES
+     ================================================================= -->
+<section class="section" id="especialidades">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Especialidades!</em></div>
+      <h2 class="h2">Tudo o que você precisa, <span class="tone">em um só lugar.</span></h2>
+      <p class="body">Uma equipe multidisciplinar que conversa entre si — para que o seu tratamento seja completo, coerente e sem idas e vindas.</p>
+    </div>
+
+    <div class="services">
+      <article class="service card" data-reveal style="--d:0s; --chip:#ffe1d6;">
+        <div class="s-top"><span class="s-ico"><i class="ph ph-tooth"></i></span><span class="s-num">01</span></div>
+        <h3 class="h3">Odontologia</h3>
+        <p class="body">Clínica geral, ortodontia, implantes, lentes e clareamento com tecnologia digital, anestesia sem dor e todo o tempo necessário para você se sentir seguro em cada etapa.</p>
+        <div class="tags"><span class="tag">Implantes</span><span class="tag">Alinhadores</span><span class="tag">Clareamento</span><span class="tag">Odontopediatria</span></div>
+        <a href="#contato" class="more">Agendar <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+      <article class="service card" data-reveal style="--d:.1s; --chip:#e7e0ff;">
+        <div class="s-top"><span class="s-ico"><i class="ph ph-brain"></i></span><span class="s-num">02</span></div>
+        <h3 class="h3">Psicologia</h3>
+        <p class="body">Psicoterapia para crianças, adolescentes, adultos e casais — presencial ou online, em um ambiente acolhedor e sigiloso, com escuta sem julgamentos.</p>
+        <div class="tags"><span class="tag">TCC</span><span class="tag">Ansiedade</span><span class="tag">Infantil</span><span class="tag">Online</span></div>
+        <a href="#contato" class="more">Agendar <i class="ph ph-arrow-up-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     COMO FUNCIONA
+     ================================================================= -->
+<section class="section process-section" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Como funciona!</em></div>
+      <h2 class="h2">Cuidar de você é
+        <span class="circled">simples.
+          <svg class="draw" viewBox="0 0 210 70" preserveAspectRatio="none" aria-hidden="true" style="--dd:.7s"><path pathLength="1" d="M18 38 C12 14 82 4 140 8 C196 12 212 40 172 54 C122 70 34 66 14 46 C2 32 32 12 78 9" fill="none" stroke="#ff3700" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+        </span>
+        <span class="tone">Em quatro passos.</span>
+      </h2>
+    </div>
+
+    <div class="steps">
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:.9s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:1.1s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="step-arrow draw" viewBox="0 0 110 60" aria-hidden="true" style="--dd:1.3s"><path pathLength="1" d="M6 48 C30 8 76 4 100 30 M86 22 L101 32 L84 40" fill="none" stroke="#ff3700" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+      <div class="step card" data-reveal="tilt" style="--r:-3deg; --r-from:-10deg; --d:0s">
+        <span class="numeral">1</span>
+        <span class="s-chip"><i class="ph ph-calendar-check"></i>2 minutos</span>
+        <h3 class="h3">Agende</h3>
+        <p class="body">Pelo WhatsApp, telefone ou aqui no site. Escolha o melhor horário para você.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:2deg; --r-from:10deg; --d:.12s">
+        <span class="numeral">2</span>
+        <span class="s-chip"><i class="ph ph-stethoscope"></i>Avaliação</span>
+        <h3 class="h3">Avaliação integrada</h3>
+        <p class="body">Uma conversa sem pressa e exames digitais para entender você por inteiro.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:-2deg; --r-from:-10deg; --d:.24s">
+        <span class="numeral">3</span>
+        <span class="s-chip"><i class="ph ph-clipboard-text"></i>Sob medida</span>
+        <h3 class="h3">Plano personalizado</h3>
+        <p class="body">Os especialistas montam juntos um plano claro, com etapas, prazos e valores.</p>
+      </div>
+      <div class="step card" data-reveal="tilt" style="--r:3deg; --r-from:10deg; --d:.36s">
+        <span class="numeral">4</span>
+        <span class="s-chip"><i class="ph ph-heart"></i>Contínuo</span>
+        <h3 class="h3">Acompanhamento</h3>
+        <p class="body">Lembretes, retornos e um time que acompanha sua evolução de perto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     EQUIPE
+     Para cada profissional: troque a foto (assets/img/equipe/NOME.jpg), nome, especialidade e registro.
+     Para adicionar mais: duplique um <article class="member">.
+     ================================================================= -->
+<section class="section" id="equipe">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Nossa equipe!</em></div>
+      <h2 class="h2">Gente que cuida <span class="tone">de gente.</span></h2>
+      <p class="body">Profissionais experientes, atualizados e — acima de tudo — atenciosos. Conheça quem vai cuidar de você.</p>
+    </div>
+
+    <div class="team">
+      <article class="member card" data-reveal="tilt" style="--r:-3deg; --r-from:-12deg; --d:0s">
+        <!-- 📷 FOTO: profissional 1 → assets/img/equipe/guilherme.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/guilherme.jpg"><img src="assets/img/equipe/guilherme.jpg" alt="Dr. Guilherme Sudati" style="object-position:50% 8%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dr. Guilherme Sudati</h3>
+          <a class="m-ig" href="https://www.instagram.com/guilherme_sudati/" target="_blank" rel="noopener">@guilherme_sudati</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/guilherme_sudati/" target="_blank" rel="noopener" aria-label="Instagram de Dr. Guilherme Sudati"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:2deg; --r-from:12deg; --d:.1s">
+        <!-- 📷 FOTO: profissional 2 → assets/img/equipe/isabela.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/isabela.jpg"><img src="assets/img/equipe/isabela.jpg" alt="Dra. Isabela Cristina Signori" style="object-position:50% 22%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dra. Isabela Cristina Signori</h3>
+          <a class="m-ig" href="https://www.instagram.com/dra.isabelasignori/" target="_blank" rel="noopener">@dra.isabelasignori</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/dra.isabelasignori/" target="_blank" rel="noopener" aria-label="Instagram de Dra. Isabela Cristina Signori"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:-2deg; --r-from:-12deg; --d:.2s">
+        <!-- 📷 FOTO: profissional 3 → assets/img/equipe/lais.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/lais.jpg"><img src="assets/img/equipe/lais.jpg" alt="Laís Caetano Sudati" style="object-position:50% 18%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Laís Caetano Sudati</h3>
+          <a class="m-ig" href="https://www.instagram.com/psico_infantojuvenil_lais/" target="_blank" rel="noopener">@psico_infantojuvenil_lais</a>
+          <p class="body">Psicóloga</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Psicologia</span>
+          <div class="socials"><a href="https://www.instagram.com/psico_infantojuvenil_lais/" target="_blank" rel="noopener" aria-label="Instagram de Laís Caetano Sudati"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+      <article class="member card" data-reveal="tilt" style="--r:3deg; --r-from:12deg; --d:.3s">
+        <!-- 📷 FOTO: profissional 4 → assets/img/equipe/nathalia.jpg (retrato vertical) -->
+        <div class="photo" data-label="equipe/nathalia.jpg"><img src="assets/img/equipe/nathalia.jpg" alt="Dra. Nathalia Rampanelli" style="object-position:50% 15%" loading="lazy" onerror="this.remove()"></div>
+        <div class="m-info">
+          <h3 class="title">Dra. Nathalia Rampanelli</h3>
+          <a class="m-ig" href="https://www.instagram.com/dentista.nathaliarampanelli/" target="_blank" rel="noopener">@dentista.nathaliarampanelli</a>
+          <p class="body">Dentista</p>
+        </div>
+        <div class="m-foot">
+          <span class="reg">Odontologia</span>
+          <div class="socials"><a href="https://www.instagram.com/dentista.nathaliarampanelli/" target="_blank" rel="noopener" aria-label="Instagram de Dra. Nathalia Rampanelli"><i class="ph ph-instagram-logo"></i></a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="team-cta" data-reveal>
+      <span class="pill status"><span class="dot"></span> 18 especialistas · <b>atendimento de seg. a sáb.</b></span>
+      <a href="#contato" class="btn btn-secondary">Agendar com um especialista</a>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================
+     NOSSO ESPAÇO — moldura escura com tickers verticais
+     📷 FOTOS: assets/img/espaco/01.jpg … 09.jpg (verticais 4:5). O JS duplica as colunas para o loop infinito.
+     ================================================================= -->
+<section class="section" id="espaco" style="padding-top:40px">
+  <div class="wrap" style="max-width:1440px; width:min(100% - 48px, 1440px);">
+    <div class="dark-frame gallery" id="gallery" data-reveal="scale">
+      <div class="gallery-cols">
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/01.jpg"><img src="assets/img/espaco/01.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/02.jpg"><img src="assets/img/espaco/02.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/03.jpg"><img src="assets/img/espaco/03.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/04.jpg"><img src="assets/img/espaco/04.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/05.jpg"><img src="assets/img/espaco/05.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/06.jpg"><img src="assets/img/espaco/06.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+        <div class="g-col"><div class="g-track">
+          <div class="photo dark" data-label="espaco/07.jpg"><img src="assets/img/espaco/07.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/08.jpg"><img src="assets/img/espaco/08.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+          <div class="photo dark" data-label="espaco/09.jpg"><img src="assets/img/espaco/09.jpg" alt="Espaço Le Face" loading="lazy" onerror="this.remove()"></div>
+        </div></div>
+      </div>
+      <div class="g-shade"></div>
+      <div class="g-shade bottom"></div>
+      <div class="g-head">
+        <div class="eyebrow on-dark"><em>Nosso espaço!</em></div>
+        <h2 class="h2">Um lugar pensado <span style="color:rgba(255,255,255,.5)">para acalmar.</span></h2>
+        <p class="body">Luz natural, salas silenciosas e equipamentos de última geração. Você vai se sentir em casa — só que mais bem cuidado.</p>
+      </div>
+    </div>
+  </div>
+  <div class="cursor-badge" id="cursorBadge" aria-hidden="true">
+    <span><svg viewBox="0 0 100 100"><defs><path id="circ" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text><textPath href="#circ">conheça · nosso · espaço · </textPath></text></svg></span>
+    <i class="ph ph-eye"></i>
+  </div>
+</section>
+
+<!-- =================================================================
+     DEPOIMENTOS
+     ================================================================= -->
+<section class="section testi-section" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Depoimentos!</em></div>
+      <h2 class="h2">Sorrisos que <span class="tone">falam por nós.</span></h2>
+      <span class="pill google"><i class="ph-fill ph-google-logo" style="font-size:18px"></i><b>4,9</b><span class="stars">★★★★★</span><span class="tone">320 avaliações</span></span>
+    </div>
+  </div>
+  <!-- Troque pelos depoimentos reais dos pacientes (com autorização) -->
+  <div class="testi-row" id="testiRow">
+    <figure class="testi card" style="--r:-1.5deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Eu tinha pavor de dentista. A equipe da Le Face mudou completamente minha relação com o tratamento. Atendimento impecável.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#ffe1d6">C</span><div><b>Camila R.</b><span class="meta">Paciente de Ortodontia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“A terapia aqui foi um divisor de águas. Ambiente acolhedor e uma escuta que eu nunca tinha encontrado.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#e7e0ff">J</span><div><b>João P.</b><span class="meta">Paciente de Psicologia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:-1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Fiz implante e comecei a terapia no mesmo lugar. Organização nota 10, tudo explicado com clareza e muito carinho.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#dcf3d6">M</span><div><b>Márcia S.</b><span class="meta">Implantodontia + Psicologia</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:1.5deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Fui ouvida de verdade. Explicaram cada etapa, respeitaram o meu tempo e me senti segura do início ao fim.”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#fff1c7">L</span><div><b>Larissa M.</b><span class="meta">Atendimento humanizado</span></div></figcaption>
+    </figure>
+    <figure class="testi card" style="--r:-1deg; margin:0;">
+      <span class="stars">★★★★★</span>
+      <blockquote class="title" style="margin:0">“Levo meus dois filhos. A equipe tem um carinho enorme com as crianças — eles adoram ir!”</blockquote>
+      <hr><figcaption class="who"><span class="initials" style="--chip:#d9ecff">R</span><div><b>Ricardo T.</b><span class="meta">Odontopediatria</span></div></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- =================================================================
+     EXPLORE — sorriso & mente (seção interativa)
+     Os textos dos cards (importância, mito ou verdade e quiz) ficam no
+     <script> do fim da página, no objeto EXP_DATA: edite por lá.
+     ================================================================= -->
+<section class="section" id="explore">
+  <div class="light-sweep" aria-hidden="true" style="transform:scaleX(-1)"></div>
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Explore!</em></div>
+      <h2 class="h2">Do sorriso à mente, <span class="tone">tudo se conecta.</span></h2>
+      <p class="body">Escolha um dos dois e descubra, de um jeito leve, por que esse cuidado faz tanta diferença: dicas práticas, mitos, verdades e um quiz rápido.</p>
+    </div>
+
+    <div class="exp" id="exp">
+      <div class="exp-stage">
+        <!-- SORRISO -->
+        <button type="button" class="exp-item card" data-theme="sorriso" aria-expanded="false" aria-controls="exp-sorriso" data-reveal="tilt" style="--chip:#ffe1d6; --r-from:-8deg; --d:0s">
+          <span class="exp-done"><i class="ph-fill ph-check-circle"></i>Tema completo</span>
+          <span class="exp-art">
+            <span class="exp-tip pill"><i class="ph ph-cursor-click"></i><span class="exp-tip-txt">Clique para explorar</span></span>
+            <svg class="exp-svg" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="smMouth"><path d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/></clipPath>
+              </defs>
+              <g class="sm-body" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path fill="#ff3700" d="M30 119C50 97 78 84 103 84C110 84 115 88 120 93C125 88 130 84 137 84C162 84 190 97 210 119C194 162 160 188 120 188C80 188 46 162 30 119Z"/>
+                <path fill="#2b2b2b" stroke="none" d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/>
+                <g clip-path="url(#smMouth)" stroke-width="3">
+                  <path fill="#ffdbe8" d="M70 172C78 150 100 142 120 142C140 142 162 150 170 172Z"/>
+                  <path fill="none" d="M120 148V166"/>
+                  <rect fill="#fff" x="99" y="92" width="21" height="46" rx="6"/>
+                  <rect fill="#fff" x="120" y="92" width="21" height="46" rx="6"/>
+                  <rect fill="#fff" x="81" y="92" width="18" height="43" rx="6"/>
+                  <rect fill="#fff" x="141" y="92" width="18" height="43" rx="6"/>
+                  <rect fill="#fff" x="66" y="92" width="15" height="39" rx="6"/>
+                  <rect fill="#fff" x="159" y="92" width="15" height="39" rx="6"/>
+                  <rect fill="#fff" x="53" y="92" width="13" height="34" rx="5"/>
+                  <rect fill="#fff" x="174" y="92" width="13" height="34" rx="5"/>
+                </g>
+                <path fill="none" d="M46 121C72 109 100 105 120 107C140 105 168 109 194 121C176 151 150 166 120 166C90 166 64 151 46 121Z"/>
+                <path class="sm-glint" fill="none" stroke="#fff" stroke-width="4" d="M150 176C162 172 172 166 180 158"/>
+                <path class="sm-glint" fill="none" stroke="#fff" stroke-width="4" d="M62 103C68 99 74 96 82 94"/>
+              </g>
+              <g stroke="#000" stroke-width="2.5" stroke-linejoin="round" fill="#fff">
+                <g transform="translate(200 62)"><path class="spark" d="M0-14C2-2 2-2 14 0C2 2 2 2 0 14C-2 2-2 2-14 0C-2-2-2-2 0-14Z"/></g>
+                <g transform="translate(222 92)"><path class="spark" style="--d:-1s" d="M0-8C1-1 1-1 8 0C1 1 1 1 0 8C-1 1-1 1-8 0C-1-1-1-1 0-8Z"/></g>
+                <g transform="translate(36 72)"><path class="spark" style="--d:-2s" d="M0-10C1.5-1.5 1.5-1.5 10 0C1.5 1.5 1.5 1.5 0 10C-1.5 1.5-1.5 1.5-10 0C-1.5-1.5-1.5-1.5 0-10Z"/></g>
+                <g transform="translate(108 117)"><path class="spark" style="--d:-.5s" stroke-width="2" d="M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z"/></g>
+              </g>
+            </svg>
+          </span>
+          <span class="exp-label">
+            <span class="exp-num">01</span>
+            <span class="h3">Sorriso</span>
+            <span class="body">Cuidado com os dentes</span>
+            <span class="exp-more"><span><span class="body">Seu sorriso conversa com o corpo todo: da digestão ao coração, passando pela autoestima. Veja por que esse cuidado vale tanto.</span></span></span>
+            <span class="exp-go"><span class="exp-go-txt">Explorar</span><i class="ph ph-arrow-right"></i></span>
+          </span>
+        </button>
+
+        <!-- MENTE -->
+        <button type="button" class="exp-item card" data-theme="mente" aria-expanded="false" aria-controls="exp-mente" data-reveal="tilt" style="--chip:#e7e0ff; --r-from:8deg; --d:.12s">
+          <span class="exp-done"><i class="ph-fill ph-check-circle"></i>Tema completo</span>
+          <span class="exp-art">
+            <span class="exp-tip pill"><i class="ph ph-cursor-click"></i><span class="exp-tip-txt">Clique para explorar</span></span>
+            <svg class="exp-svg" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+              <g class="br-body" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path fill="#fff" d="M126 150C130 166 129 182 124 200H146C144 184 146 168 154 154Z"/>
+                <path fill="#fff" d="M146 150C146 170 166 184 188 178C206 173 210 152 196 140Z"/>
+                <path fill="none" stroke-width="3" d="M156 160C168 168 184 168 196 160M164 172C174 176 186 175 194 170"/>
+                <path fill="#fff" d="M54 150C34 144 26 120 38 102C26 82 38 58 62 55C70 36 96 28 112 39C126 25 152 26 162 40C182 32 204 46 203 66C220 76 222 104 208 116C214 134 196 148 176 142C166 154 148 158 136 150C122 162 98 164 86 154C74 162 58 160 54 150Z"/>
+                <g fill="none" stroke-width="3">
+                  <path d="M80 133C100 121 122 119 150 111"/>
+                  <path d="M138 38C130 56 144 66 134 82C128 94 138 102 132 116"/>
+                  <path d="M56 82C68 76 74 88 88 82"/>
+                  <path d="M62 110C74 102 84 114 98 106"/>
+                  <path d="M94 56C100 66 92 74 100 86"/>
+                  <path d="M112 66C104 76 116 86 108 98"/>
+                  <path d="M162 54C170 66 162 76 172 88"/>
+                  <path d="M186 66C180 80 196 88 188 102"/>
+                  <path d="M200 120C190 124 180 116 170 124"/>
+                  <path d="M96 146C110 138 122 148 138 140"/>
+                  <path d="M150 122C160 130 172 128 180 134"/>
+                </g>
+                <g stroke="#ff3700" stroke-width="2.5">
+                  <path class="syn-link" fill="none" d="M74 96L104 72L146 70L180 98M104 72L122 104L146 70M122 104L152 128L180 98M74 96L94 126L122 104M94 126L152 128"/>
+                  <g fill="#ff3700" stroke="#fff">
+                    <circle class="syn-node" cx="74" cy="96" r="5"/>
+                    <circle class="syn-node" style="--d:-.35s" cx="104" cy="72" r="5"/>
+                    <circle class="syn-node" style="--d:-.7s" cx="146" cy="70" r="5"/>
+                    <circle class="syn-node" style="--d:-1.05s" cx="180" cy="98" r="5"/>
+                    <circle class="syn-node" style="--d:-1.4s" cx="122" cy="104" r="6"/>
+                    <circle class="syn-node" style="--d:-1.75s" cx="152" cy="128" r="5"/>
+                    <circle class="syn-node" style="--d:-2.1s" cx="94" cy="126" r="5"/>
+                  </g>
+                </g>
+              </g>
+              <g stroke="#000" stroke-width="2.5" stroke-linejoin="round" fill="#fff">
+                <g transform="translate(212 40)"><path class="spark" style="--d:-1.5s" d="M0-12C2-2 2-2 12 0C2 2 2 2 0 12C-2 2-2 2-12 0C-2-2-2-2 0-12Z"/></g>
+                <g transform="translate(28 52)"><path class="spark" style="--d:-.4s" d="M0-9C1.5-1.5 1.5-1.5 9 0C1.5 1.5 1.5 1.5 0 9C-1.5 1.5-1.5 1.5-9 0C-1.5-1.5-1.5-1.5 0-9Z"/></g>
+                <g transform="translate(226 136)"><path class="spark" style="--d:-2.4s" d="M0-7C1-1 1-1 7 0C1 1 1 1 0 7C-1 1-1 1-7 0C-1-1-1-1 0-7Z"/></g>
+              </g>
+            </svg>
+          </span>
+          <span class="exp-label">
+            <span class="exp-num">02</span>
+            <span class="h3">Mente</span>
+            <span class="body">Saúde mental e emocional</span>
+            <span class="exp-more"><span><span class="body">Cuidar da mente é cuidar de como você dorme, aprende, se relaciona e até de como o corpo se sente. Explore e teste o que você sabe.</span></span></span>
+            <span class="exp-go"><span class="exp-go-txt">Explorar</span><i class="ph ph-arrow-right"></i></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- painéis com abas: montados pelo script a partir de EXP_DATA -->
+      <div class="exp-panels"></div>
+    </div>
+
+    <p class="meta exp-note" data-reveal>Conteúdo educativo: não substitui a avaliação de um profissional.</p>
+  </div>
+</section>
+
+<!-- =================================================================
+     DÚVIDAS (FAQ)
+     ================================================================= -->
+<section class="section" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow"><em>Dúvidas!</em></div>
+      <h2 class="h2">Perguntas <span class="tone">frequentes.</span></h2>
+    </div>
+
+    <div class="faq-grid">
+      <aside class="faq-card glass" data-reveal>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <h3 class="h3">Ainda com dúvidas?</h3>
+          <p class="body">Nossa equipe de atendimento responde rapidinho — de segunda a sábado.</p>
+        </div>
+        <div class="btns">
+          <span class="ring" style="background:rgba(255,255,255,.5)">
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary">Falar no WhatsApp
+              <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+            </a>
+          </span>
+          <a href="mailto:contato@leface.com.br" class="link">contato@leface.com.br</a>
+        </div>
+      </aside>
+
+      <div class="faq-list" id="faq" data-reveal style="--d:.1s">
+        <div class="faq-item open">
+          <button class="faq-q" aria-expanded="true">Vocês aceitam convênios?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim! Atendemos os principais convênios odontológicos e de saúde, além de atendimento particular com condições facilitadas. Fale com a gente para confirmar o seu plano.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Como faço para agendar uma consulta?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Pelo WhatsApp, telefone ou pelo botão “Agendar” aqui no site. Em poucos minutos confirmamos o melhor horário para você.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">O que é a avaliação integrada?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">É uma primeira consulta em que olhamos para você por inteiro: saúde bucal, saúde emocional, hábitos e bem-estar. A partir dela, os especialistas montam juntos o seu plano.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">A psicologia tem atendimento online?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim. As sessões de psicoterapia podem ser presenciais ou online, com a mesma qualidade e total sigilo.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Vocês atendem crianças?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Atendemos todas as idades. Temos odontopediatria, psicologia infantil e um ambiente preparado para deixar os pequenos à vontade.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Quais as formas de pagamento?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Pix e cartões de débito e crédito, com parcelamento dos tratamentos.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Tem estacionamento?<span class="plus"></span></button>
+          <div class="faq-a"><div><p class="body">Sim, contamos com estacionamento conveniado ao lado da clínica e fácil acesso por transporte público.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =================================================================
+     RODAPÉ / CONTATO
+     ================================================================= -->
+<div class="footer-outer">
+<footer class="footer" id="contato">
+  <div class="rays" aria-hidden="true" style="height:100%; inset:0;"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="footer-cta" data-reveal>
+      <div class="eyebrow on-dark"><em>Vamos começar?</em></div>
+      <h2 class="display">Seu próximo sorriso <span class="tone">começa aqui.</span></h2>
+      <p class="body">Agende sua avaliação integrada e descubra como é ser cuidado por inteiro.</p>
+      <span class="ring on-ink">
+        <!-- TROQUE o número de WhatsApp -->
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn btn-primary">Agendar pelo WhatsApp
+          <span class="ico"><i class="ph ph-arrow-up-right"></i><i class="ph ph-arrow-up-right"></i></span>
+        </a>
+      </span>
+    </div>
+
+    <div class="footer-cols">
+      <div>
+        <a href="#topo" class="wordmark pill" aria-label="Le Face — topo">
+          <span class="logo-slot">
+            <!-- 🖼️ LOGO (rodapé): mesma imagem da navegação → assets/img/logo.png -->
+            <img src="assets/img/logo.png" alt="Le Face" onload="this.closest('.wordmark').classList.add('has-logo')" onerror="this.remove()">
+            <span class="logo-mark">Lf</span>
+          </span>
+          <span class="wordmark-text">Le Face</span>
+        </a>
+        <p style="color:rgba(255,255,255,.6); max-width:280px;">Clínica integrada de odontologia, psicologia e saúde. Cuidado por inteiro, do sorriso à mente.</p>
+      </div>
+      <div>
+        <h4>Endereço</h4>
+        <!-- TROQUE pelo endereço real -->
+        <p>Rua Exemplo, 123 — Sala 45<br>Bairro, Cidade — UF<br>CEP 00000-000</p>
+        <a href="https://www.google.com/maps/place/Consult%C3%B3rio+odontol%C3%B3gico+Le+Face+Odontologia+Humanizada+e+Psicologia+Infantil/@-27.0947675,-52.6102221,17z/data=!3m1!4b1!4m6!3m5!1s0x94e4b7024091fc17:0xe29704c221632538!8m2!3d-27.0947675!4d-52.6102221!16s%2Fg%2F11h75_xdts?entry=ttu&amp;g_ep=EgoyMDI2MTEwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="link" style="color:var(--accent)">Ver no mapa ↗</a>
+      </div>
+      <div>
+        <h4>Horários</h4>
+        <p>Seg. a sex. — 8h às 20h<br>Sábado — 8h às 13h<br>Psicologia online — horários flexíveis</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+550000000000">(00) 0000-0000</a></li>
+          <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener">(00) 00000-0000 · WhatsApp</a></li>
+          <li><a href="mailto:contato@leface.com.br">contato@leface.com.br</a></li>
+        </ul>
+        <div class="socials" style="margin-top:18px">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="ph ph-whatsapp-logo"></i></a>
+          <a href="#" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="meta">© Le Face Clínica Integrada, <span id="year">2026</span> · Responsável técnico: Nome — CRO-UF 00000</span>
+      <a href="#topo" class="meta" style="display:flex; align-items:center; gap:6px;">Voltar ao topo <i class="ph ph-arrow-up"></i></a>
+    </div>
+    <div class="giant" aria-hidden="true">Le Face</div>
+  </div>
+</footer>
+</div>
+
+<!-- botão flutuante WhatsApp (TROQUE o número) -->
+<a class="fab" id="fab" href="https://wa.me/5500000000000" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp">
+  <i class="ph ph-whatsapp-logo"></i><span class="fab-tip">Agende pelo WhatsApp</span>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

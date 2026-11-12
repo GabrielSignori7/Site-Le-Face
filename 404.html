@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página não encontrada — Le Face</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#d9d9d9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Estilos embutidos de propósito: esta página pode aparecer em qualquer endereço do site,
+     então não depende de caminhos relativos. Valores iguais aos tokens de assets/css/styles.css. -->
+<style>
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{
+    margin:0; min-height:100svh; display:grid; place-items:center; padding:24px;
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; color:#000; text-align:center;
+    background:linear-gradient(225deg,#fff 0%,#dbdbdb 100%) fixed, #d9d9d9;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{ display:flex; flex-direction:column; align-items:center; gap:20px; max-width:520px; }
+  .eyebrow{ display:flex; align-items:center; gap:20px; font:italic 400 24px/1 "Instrument Serif",Georgia,serif; color:#00000080; }
+  .eyebrow::before,.eyebrow::after{ content:""; width:64px; height:1px; background:linear-gradient(90deg,transparent,#00000040); }
+  .eyebrow::after{ transform:scaleX(-1); }
+  .code{ color:#000; font-weight:300; font-size:clamp(96px,22vw,180px); line-height:1; letter-spacing:-.06em; margin:0; }
+  .code span{ color:#ff3700; }
+  h1{ font-weight:400; font-size:clamp(28px,5vw,40px); line-height:1.2; letter-spacing:-.045em; margin:0; }
+  p{ margin:0; font-size:16px; line-height:1.6; color:#00000080; letter-spacing:-.01em; }
+  .ring{ display:inline-flex; padding:8px; border-radius:999px; background:rgba(255,255,255,.25); margin-top:12px; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:12px 24px; border-radius:154px; background:#000; color:#fff; text-decoration:none; font-size:16px; letter-spacing:-.01em;
+    box-shadow:rgba(0,0,0,.18) 2.9px 2.9px 9px -1.25px, rgba(0,0,0,.18) 10.9px 10.9px 34px -2.08px; transition:transform .35s cubic-bezier(.22,1,.36,1); }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:focus-visible{ outline:2px solid #ff3700; outline-offset:3px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Ops!</div>
+  <p class="code" aria-hidden="true">4<span>0</span>4</p>
+  <h1>Esta página não existe.</h1>
+  <p>O link pode estar errado ou a página mudou de lugar. Volte para o início e continue de onde parou.</p>
+  <span class="ring"><a class="btn" id="home" href="/">Voltar para o início <span aria-hidden="true">↗</span></a></span>
+</main>
+<script>
+  // GitHub Pages de projeto (usuario.github.io/repositorio/): o início fica dentro da pasta do repositório
+  if (location.hostname.endsWith('github.io')) {
+    var repo = location.pathname.split('/')[1];
+    if (repo) document.getElementById('home').href = '/' + repo + '/';
+  }
+</script>
+</body>
+</html>

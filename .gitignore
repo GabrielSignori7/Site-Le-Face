@@ -1,0 +1,16 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Configuração local do Claude Code (as skills em .claude/skills continuam versionadas)
+.claude/settings.local.json
+
+# Temporários
+*.log
+*.tmp
+node_modules/
